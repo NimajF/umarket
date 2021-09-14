@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate')%>
+<section class="productCon">
+        <div class="prodDiv">
+            <div class="carouImgs">
+                <div class="carou">
+                    <% foundProduct.images.forEach((img, i) => {  %>
+                       
+                        <img src="<%= img.url%>" alt="">
+                    
+                    <% }) %>
+                </div>
+            </div>
+            <div class="imageDiv">
+                <div class="square">
+                    <img src="<%= foundProduct.images[0].url %> " alt="">
+                </div>    
+                </div>
+            <div class="prodInfo">
+                <!-- <h2 class="prodH1 mt-3"> </h2> -->
+                <input type="text" class="form-control" value="<%= foundProduct.title %>">
+                <!-- <p class="mb-1">By <b></b></p><br> -->
+                <label for="categories" class="form-label">Category</label>
+                <select class="form-select form-select-sm mb-3" id="categories" name="product[categories]" aria-label=".form-select-lg example" required>
+                    <option value="<%= foundProduct.categories %>"><%= foundProduct.categories %></option>
+                    <% for (let c = 0; c < categories.length; c++) {%>
+                        <% for (const cat in categories[c]) {%>
+                             <option value="<%= cat %>"> <%= cat %> </option>
+                        <% } %> 
+                                    
+                    <% } %> 
+                </select>
+                <hr>
+                
+                
+                <!-- <h3 class="mb-3" style="color: rgb(127, 255, 212);">$ </h3> -->
+                <label for="price">Price</label>
+                <input type="number" id="price" value="<%= foundProduct.price %>">
+    
+                <div class="desc">
+                    <h5>Product description</h4>
+                    <!-- <p class="mb-4"><%= foundProduct.description %></p> -->
+                    <textarea class="form-control mb-4" name="desc" id="desc" cols="50" rows="10"><%= foundProduct.description %></textarea>
+                </div>
+                <a href="#" class="btn btn-success mb-4 btnBuy">Confirm changes</a>
+                
+            </div> 
+        </div>
+</section>

@@ -1,0 +1,151 @@
+
+body{
+    background: rgb(236, 236, 236);
+}
+.productCon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+.prodDiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    width: 65rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.24); 
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.24);
+}
+.carouImgs {
+    width: 5.5rem;
+    border: 1px solid rgb(192, 191, 191);
+    
+}
+.carou{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.carou img{
+    width: 50px;
+    height: 50px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgb(144, 144, 144);;
+    border-radius: 5px;
+    
+    
+}
+.carou img:hover{
+    border: 2px solid  rgba(52, 131, 250, 1);
+}
+
+
+.square {
+    height: 400px;
+    width: 400px;
+    
+}
+.square img {
+    width: 400px;
+    height: 400px;
+
+}
+
+
+.prodH1{
+    align-self: flex-end;
+}
+
+.prodInfo{
+    padding-left: 2rem;
+    padding-right: 3rem;
+}
+
+.btnBuy{
+    background-color: rgb(127, 255, 212);
+    border-color: transparent;
+    color: #000;
+}
+.btnBuy:hover{
+    background-color: rgb(101, 216, 177);
+    border-color: transparent;
+    color: #000;
+}
+.btnBuy:active{
+    outline: transparent;
+}
+
+
+.reviewDiv{
+    width: 65rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.24); 
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.24);
+    padding: 3rem;
+}
+
+#title{
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+#title:focus{
+    outline: none;
+}
+#body{
+    border-radius: 5px;
+    border-color: #ced4da;
+    
+}
+#body:focus{
+    outline: none;
+}
+.btnReview{
+    background-color: aquamarine;
+}
+
+.logReview{
+    display: inline-block;
+    transition: .5s ease-in;
+} 
+.logReview:hover{
+    color: rgb(127, 255, 212);
+}
+
+
+.reviews{
+    width: 65rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.review{
+    display: flex;
+    flex-direction: row;
+    width: 65rem;
+    background-color: #fff;
+}
+
+.divDeleteReview{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1rem;
+
+}
+.deleteReview button{
+    background-color: #dc3545;
+    color: #000;
+    border-radius: 5px;
+    border: none;
+}
+
+.reviewBody{
+    padding: 1rem;
+    
+}

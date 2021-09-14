@@ -1,0 +1,65 @@
+body{
+    height: 100vh;
+    /* background: rgb(127,255,212); */
+    background: linear-gradient(100deg, aquamarine, #5390d9, #5e60ce, #6930c3);
+    /* background-size: cover;
+    background-position: center; */
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+section{
+    height: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s linear; 
+}
+
+.login{
+    background-color: rgb(255, 255, 255);
+    width: 20rem;
+    border-radius: 5px;
+    /* transition: all .5s linear;  */
+}
+
+.btn{
+    background-color: aquamarine;
+    transition: .5s ease-in-out;
+}
+.btn:hover{
+    background-color: rgb(102, 228, 186);
+    transform: scale(1.01);
+    cursor: pointer;
+}
+.btn:active{
+    background-color: rgb(70, 177, 141);
+    
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+    }
+
+    @media screen and (max-width: 992px) {
+        section{
+            margin-top: 5rem;
+            height: 50%;
+           
+        }
+        .btn{
+            padding: 0.5rem;
+            font-size: 1.5rem;
+        }
+      }    

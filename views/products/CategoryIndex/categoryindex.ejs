@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+<h1 class="catProducts"><%= categoryName %> Products</h1>
+    <section class="catIndex">
+      <div class="searchIndex">
+        <h2 class="ms-3">asdsad</h2>
+      </div>
+      <div class="me-4 allProducts">
+        <% for (let p of products) {%>
+          <a href="/products/<%= p._id %>/show">
+            <div class="card ms-4">
+            
+              
+              <div class="image">
+                <img src="<%= p.images[0].url %> " alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= p.title %> </h5>
+                <% if (p.price < 200) {%>
+                  <p class="card-text text-muted"><b>On sale!</b> $<%= p.price %> </p> 
+                <% }else {%>
+                  <p class="card-text text-muted"> $<%= p.price %> </p> 
+                  <p class="card-text"><%= p.description %> </p> 
+                <% } %> 
+              </div>
+              
+            </div>
+          </a>
+          <hr class="ms-3">   
+      <% } %> 
+      </div>
+    </section>

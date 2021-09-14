@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate')%>
+<section class="productCon">
+    <div class="prodDiv mb-3">
+        <div class="carouImgs">
+            <div class="carou">
+                <% foundProduct.images.forEach((img, i) => {  %>
+                   
+                    <img src="<%= img.url%>" alt="">
+                
+                <% }) %>
+            </div>
+        </div>
+        <div class="imageDiv">
+            <div class="square">
+                <img src="<%= foundProduct.images[0].url %> " alt="">
+            </div>    
+            </div>
+        <div class="prodInfo">
+            <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2>
+            <p class="mb-1">By <b><%= foundProduct.author.username %></b></p><br>
+            <span class="text-muted"><%= foundProduct.categories %></span>
+            
+            <hr>
+            
+            <% if (foundProduct.price < 200) {%> 
+            <h3><b class="pe-3">On sale!</b>$ <%= foundProduct.price %> </h3> 
+            <% } else {%> 
+            <h3 class="mb-3" style="color: rgb(127, 255, 212);">$ <%= foundProduct.price %></h3>
+            <% } %>
+            <div class="desc">
+                <h5>Product description</h4>
+                <p class="mb-4"><%= foundProduct.description %></p>
+            </div>
+            <form action="/cart" method="POST">
+                <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                <button class="btn btn-success mb-3 btnBuy">Buy</button>
+            </form>
+            <form action="#">
+                <button class="btn btn-warning">Add to cart</button>
+            </form>
+        </div> 
+    </div>
+    <% if (currentUser) {%>
+        <div class="reviewDiv">
+            <form action="/products/<%=foundProduct._id%>/reviews" method="POST" class="validated-form" novalidate>
+                <p style="font-size: 1.5rem;">Leave a review</p>
+                <div class="mt-4">
+                    <label for="title">Review title</label><br>
+                    <input type="text" class="mb-4 mt-3" id="title" name="review[title]" required>
+                </div>
+                <div>
+                    <label for="stars">Rate this product:</label><br>
+                    <input type="number" class="mb-3 mt-3" id="starts" name="review[rating]" min="1" max="5" required>
+                </div>
+                <div>
+                    <textarea class="mb-3 mt-3" id="body" name="review[body]" rows="5" cols="50" placeholder="your review here..." required></textarea>
+                    
+                </div>
+                <button class="btn align-self-center btnReview">Submit review</button>
+            </form>
+        </div>
+    <% } else {%>
+        <p class="logReview mt-3">Log in to leave a review</p>
+        <a href="/login" class="btn btn-secondary">Log in</a>
+    <% } %>     
+    <div class="reviews mt-5">
+        <h4>Reviews</h4>
+        <% if (foundProduct.reviews.length) {%> 
+            <!-- If there is any review in the product -->
+            
+            <% for (let r of foundProduct.reviews) {%>
+                <div class="review mb-3">
+                    <div class="reviewBody">
+                        <p>Rating: <%= r.rating %> </p>
+                        <p><b><%= r.title %> </b> - By <span class="text-muted"><%= r.author.username %></span>  </p>
+                        <p class="mb-2"> <%= r.body %> </p>
+                    </div>
+                    <% if (currentUser && r.author.equals(currentUser._id)) {%> 
+                        <!-- If there is a user logged in, and the review author ID is equal to the current user ID, show the delete button-->
+                        <div class="divDeleteReview">
+                            <form action="/products/<%= foundProduct._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST" class="deleteReview">
+                                <button><i class="bi bi-trash"></i></button>
+                            </form>
+                        </div>
+                    <% } %>     
+                </div>
+             <% } %>    
+        <% } else {%>
+            <p>No reviews to show</p> 
+        <% } %>     
+    </div>
+       
+</section>

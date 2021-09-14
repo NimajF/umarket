@@ -1,0 +1,72 @@
+
+.navbar{
+    -webkit-box-shadow: 0px 9px 26px -5px rgba(0,0,0,0.37); 
+    box-shadow: 0px 9px 26px -5px rgba(0,0,0,0.37);
+    border-bottom: 1px solid rgb(184, 180, 180);
+    height: 4rem;
+}
+
+.navbar-brand{
+    transition: .3s ease;
+}
+.navbar-brand:hover{
+    transform: translateY(1px) scale(1.1);
+    
+    
+    
+}
+.dropdown-menu{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
+}
+
+.btn-outline-success{
+    color: rgb(255, 255, 255);
+    background-color: rgb(127, 255, 212);
+    border: none;
+}
+.btn-outline-success:hover{
+    background-color: rgb(87, 223, 177);
+    border: transparent;
+}
+/* .btn-outline-success:focus{
+    outline: none;
+    box-shadow: none;
+} */
+
+.drop .nav-link {
+    transition: .5s linear;
+    border: 1px solid transparent;
+}
+.drop .nav-link:hover{
+    border: 1px solid aquamarine;
+    border-radius: 6px;
+}
+
+.nav-link{
+    transition: .5s ease;
+    border-bottom: 2px solid transparent;
+}
+.nav-link:hover{
+    border-radius: 2px;
+    border-bottom: 2px solid rgb(204, 203, 203);
+}
+
+.usr{
+    transition: .5s ease;
+    border-bottom: 2px solid transparent;
+}
+.usr:hover{
+    border-bottom: 2px solid rgb(127, 255, 212);
+}
+
+.cart{
+    transition: .5s ease;
+    border-bottom: 2px solid transparent;
+}
+.cart:hover{
+    border-bottom: 2px solid rgb(127, 255, 212);
+}
+
+.b:hover{
+    color: rgb(127, 255, 212);
+}

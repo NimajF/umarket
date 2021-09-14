@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate')%>
+<header class="mt-5 mb-4 ms-5">
+    <h1>Creating a product</h1>
+</header>
+<section class="secCreateForm">
+    <div class="prodCreate">
+        <form action="/products" method="POST" class="validated-form" enctype="multipart/form-data" novalidate>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                      1. Add you product a title
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" name="product[title]" id="title" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        2. Describe your product
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <label for="description" class="form-label">Provide product description</label>
+                        <textarea class="form-control" placeholder="add description" name="product[description]" id="description" aria-describedby="descHelp" required></textarea>
+                        <div id="descHelp" class="form-text mb-4">Get people interested in your product!</div>
+                        <div class="mb-3">
+                          <label for="formFileMultiple" class="form-label">Browse</label>
+                          <input class="form-control" type="file" name="image" id="formFileMultiple" multiple>
+                        </div>
+                        <label for="categories" class="form-label">Add category</label>
+                        <select class="form-select form-select-sm mb-3" id="categories" name="product[categories]" aria-label=".form-select-lg example" required>
+                            <% for (let c = 0; c < categories.length; c++) {%>
+                                <% for (const cat in categories[c]) {%>
+                                    <option value="<%= cat %>"> <%= cat %> </option>
+                                <% } %> 
+                                <!-- Just wanted to track the <option value>  with "c" as the initialization expression of the for loop-->
+                            <% } %> 
+                          </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                        1. Quantity and price
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <label for="quantity" class="form-label mt-3 mb-4">Quantity</label>
+                        <input class="" type="number" id="quantity" name="quantity" min="1" max="50" required>
+                        <div class="input-group mb-3 priceInp">
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            <input type="text" class="form-control" name="product[price]" placeholder="enter price" aria-label="Price" aria-describedby="basic-addon1" required>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                          2. Confirm!
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                      <div class="accordion-body">
+                            <h4>We are about to finish!</h4>
+                            <li class="h3Prod mb-2">Dont forget to check your product information before</li>
+                            <button class="btn btn-success">Create</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </form>
+    </div>
+</section>
+<script src="/javascripts/validateForm.js"></script>

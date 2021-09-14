@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+    
+}
+
+.navbar{
+    -webkit-box-shadow: 2px -18px 24px 11px rgba(0,0,0,0.32); 
+    box-shadow: 2px -18px 24px 11px rgba(0,0,0,0.32);
+}
+
+.secCreateForm{
+    height: 20vw;
+    padding: 3rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    border-radius: 20px;
+    
+}
+/* 
+.accordion-item{
+    background-color: black;
+} */
+
+input[type=number]{
+    opacity: 1;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    outline: none;
+   
+  }
+
+.priceInp{
+    width: 10rem;
+}
+
+@media screen and (max-width: 992px) {
+    .secCreateForm{
+        padding: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+

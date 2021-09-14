@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="stylesheets/home.css">
+    <link rel="stylesheet" href="stylesheets/nav.css">
+    
+</head>
+<body>
+    <%-include('../partials/navbar')%>
+    <div class="container">
+      <div id="carouselExampleControls" class="carousel slide mainCar" data-bs-ride="carousel">
+        <div class="welcome">
+          <h1 class="me-5 ms-5 mb-3">Welcome to <span style="color: rgb(75, 255, 195);">Umarket</span>!</h1>
+          <div class="welcomeTextP">
+            <p>Buy your dreams from anywhere</p>
+            <p>Start shopping or <a href="/register" class="btn btn btn-success ms-2">Sign up</a></p>
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1998&q=80." class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1465225314224-587cd83d322b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <h2 class="indexProducts">Trending Products</h2>
+    <div class="trend me-4">
+      <% for (let c of products) {%>
+        
+        <div class="card ms-4 cardAnim">
+          <div class="image">
+            <img src=" <%= c.images[0].url %>" class="card-img-top" alt="...">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= c.title %> </h5>
+              <% if (c.price < 200) {%>
+                <p class="card-text text-muted"><b>On sale!</b> $<%= c.price %> </p> 
+              <% }else {%>
+                <p class="card-text" style="color: rgb(127, 255, 212); font-weight: bold;"> $<%= c.price %> </p> 
+              <% } %> 
+                <a href="/products/<%= c._id %>/show" class="btn" id="about">About</a>
+            </div>
+          </div> 
+    <% } %> 
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="javascripts/animations.js"></script>
+  </body>
+</html>

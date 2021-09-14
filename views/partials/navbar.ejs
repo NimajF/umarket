@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="D">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/products"><span style="color: rgb(89, 230, 183);">U</span>market</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 drop">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle categories" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Search categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item fw-bold" href="#">Categories</a></li>
+                <li><hr class="dropdown-divider"></li>  
+                <% for (let c of categories) {%>
+                  <% for (const cat in c) {%>
+                  <li><a class="dropdown-item" href="/products/<%= cat %>"><%= cat %> </a></li>
+                  <% } %> 
+                <% } %> 
+                
+            </ul>
+          </li>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </ul>
+        <div class="navbar-nav ms-auto d-flex justify-content-end align-items-end links">
+          <% if (currentUser) {%>
+            <a class="nav-link me-2 usr" href="/products/newProduct"><b><i class="bi bi-tags b"></i></b> Sell</a>
+            <a class="nav-link me-2 usr" href="#"><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
+            <a class="nav-link me-2 cart" href="/cart"><i class="bi bi-cart3 b"></i></a>
+            <a class="nav-link" href="/logout">Log out</a>
+            <% } else {%>
+            <a class="nav-link me-2 ms-2 cart" href="/cart"><i class="bi bi-cart3 b"></i></a>   
+            <a class="nav-link me-2" href="/login">Log in</a>
+            <a class="nav-link" href="/register">Sign up</a> 
+            <%}%>   
+            
+          
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+  
