@@ -4,6 +4,7 @@
     box-shadow: 0px 9px 26px -5px rgba(0,0,0,0.37);
     border-bottom: 1px solid rgb(184, 180, 180);
     height: 4rem;
+    transition: all 0.3s;
 }
 
 .navbar-brand{

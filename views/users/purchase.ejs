@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate')%>
+<section class="purchaseSection">
+    <div class="purchaseDiv p-3">
+        <h3><%= product.title %> </h3>
+        <p>Buying to: <span class="text-muted"><%= product.author.username %></span></p>
+        <p>Total price: <span style="color: rgb(52, 179, 136);"><%= product.price %></span>  </p>
+        <div class="purchaseForm">
+            <form action="#">
+                <input type="hidden" name="product[id]" value="<%= product._id %>">
+                <input type="hidden" name="product[title]" value="<%= product.title %>">
+                <input type="hidden" name="product[price]" value="<%= product.price %>">
+                <input type="hidden" name="user[id]" value="<%= product.author._id %>">
+                <div class="shipping mt-4">
+                    <h5>Choose you shipping method</h5>
+                    <div>
+                        <input type="radio" id="standardShipping" name="shipping[method]" value="standard">
+                        <label for="standardShipping">Standard Shipping</label>
+                        <p style="color: rgb(38, 202, 147);">(1 month) Get it from <%= date[0] %> <%= date[1] %> to <%= date[2] %>  <%= date[1] %> </p> 
+                        <!--  -->
+                    </div>
+                    <div>
+                        <input type="radio" id="weekShipping" name="shipping[method]" value="week">
+                        <label for="weekShipping">7 days Shipping</label>
+                        <p style="color: rgb(38, 202, 147);">(7 days) Get it next <%= date[3] %>  </p>
+                    </div>
+                    <div>
+                        <input type="radio" id="premiumShipping" name="shipping[method]" value="premium">
+                        <label for="premiumShipping">Premium Shipping</label>
+                        <p style="color: rgb(38, 202, 147);">(1 day) Get it tomorrow <%= date[4] %>  </p>
+                    </div>
+                  </div>
+                  
+
+                <button class="btn btn-success">Purchase</button>
+            </form>
+        </div>
+    </div>
+
+</section>

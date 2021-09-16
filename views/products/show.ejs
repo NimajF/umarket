@@ -31,13 +31,18 @@
                 <h5>Product description</h4>
                 <p class="mb-4"><%= foundProduct.description %></p>
             </div>
-            <form action="/cart" method="POST">
+            <form action="/purchase/<%= foundProduct._id %>" method="GET">
                 <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
                 <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
                 <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
                 <button class="btn btn-success mb-3 btnBuy">Buy</button>
             </form>
-            <form action="#">
+            <form action="/cart">
+                <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
                 <button class="btn btn-warning">Add to cart</button>
             </form>
         </div> 

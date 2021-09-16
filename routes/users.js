@@ -13,6 +13,9 @@ router.route('/login')
     .get(users.renderLogin)
     .post(passport.authenticate('local', { failureRedirect: '/login' }), users.login)
 
+
+router.get('/purchase/:productId', users.renderPurchase)    
+
 router.post('/cart', users.renderCart)
 
 router.get('/logout', users.logout)//"Passport Method"
