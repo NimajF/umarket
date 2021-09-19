@@ -32,7 +32,8 @@ const products = require('./controllers/products');
 const User = require('./models/users')
 const Review = require('./models/reviews')
 
-const categories = require('./seeds/categories')
+const categories = require('./seeds/categories');
+
 
 mongoose.connect('mongodb://localhost:27017/umarket', { 
     useNewUrlParser: true,

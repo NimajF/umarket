@@ -11,10 +11,16 @@
     flex-direction: column;
     justify-content: center;
 }
+/* .purchaseForm{
+    display: flex;
+    flex-direction: row;
 
-.shipping{
+} */
+
+
+/* .shipping{
     align-self: flex-start;
-}
+} */
 .shipping input[type=radio]:hover{
     outline: rgb(127, 255, 212);
 }
@@ -31,4 +37,49 @@
 .shipping div:hover{
     /* box-shadow: 0 2px 10px rgba(0,0,0,0.25); */
     border: 1px solid aquamarine;
+}
+
+.premium{
+    background: rgb(243,243,243);
+    background: linear-gradient(264deg, rgba(243,243,243,1) 0%, #fbe67d 100%, #eed140);
+    /* background-size: cover;
+    background-position: center; */
+    background-size: 200% 200%;
+    animation: shine 5s ease infinite;
+    animation: shine 4s infinite;
+   
+}
+.premium:hover{
+    border: 1px solid black;
+}
+
+
+.payment{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.payment input{
+    width: 20rem;
+}
+.payment select{
+    width: 20rem;
+}
+
+/* .purchaseForm button{
+    display: inline-block;
+    align-self: center;
+} */
+
+@keyframes shine {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

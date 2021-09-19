@@ -2,9 +2,17 @@ const { populate } = require('../models/products');
 const Product = require('../models/products');
 const categories = require('../seeds/categories')
 
+const Day = require('../public/javascripts/weekday');
+
 module.exports.homeProducts = async (req, res)  => {
-    const products = await Product.find({})
-    res.render('homepage/home', { products, categories });
+    const products = await Product.find({});
+    const date = Day();
+    // && date[0] === 'November'
+    if ((date[3] === 'Friday' && date[0] === 'November')) {
+        products.price = Math.round((products.price * 20) / 100)
+        return res.render('homepage/home', { products, categories, date });
+    }
+    res.render('homepage/home', { products, categories, date });
 };
 module.exports.showCategoryProducts = async (req, res) => {
     const { categoryName } = req.params;

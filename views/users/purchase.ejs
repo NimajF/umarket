@@ -23,13 +23,49 @@
                         <label for="weekShipping">7 days Shipping</label>
                         <p style="color: rgb(38, 202, 147);">(7 days) Get it next <%= date[3] %>  </p>
                     </div>
-                    <div>
+                    <div class="premium mb-5">
                         <input type="radio" id="premiumShipping" name="shipping[method]" value="premium">
                         <label for="premiumShipping">Premium Shipping</label>
-                        <p style="color: rgb(38, 202, 147);">(1 day) Get it tomorrow <%= date[4] %>  </p>
+                        <p style="color: #212529;">(1 day) Get it tomorrow <%= date[4] %>  </p>
                     </div>
                   </div>
-                  
+                <div class="payment">
+                    <h6>Billing information</h6>
+                    <div class="buyerInfo mt-5 me-5">
+                        
+                        <label for="name">First name</label>
+                        <input class="form-control mb-3" type="text" name="name" id="name" placeholder="First name">
+                        
+                        <label for="last">Last name</label>
+                        <input class="form-control mb-3" type="text" name="last" id="last" placeholder="Last name">
+                        
+                        <label for="country">Country</label>
+                        <select class="form-control mb-3" name="country" id="country">
+
+                        </select>
+                        
+                        <label for="city">City</label>
+                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="City">
+                        
+                        <label for="address">Address</label>
+                        <input class="form-control mb-3" type="text" name="address" id="address" placeholder="Adress">
+                        
+                        <label for="postal">Postal code</label>
+                        <input class="form-control mb-3" type="number" name="postal" id="postal" placeholder="Postal code">
+
+                    </div>
+                    <div class="creditCard mt-5">
+                        <label for="credit">Card number</label>
+                        <input class="form-control mb-3" type="tel" name="credit" id="credit" placeholder="xxxx xxxx xxxx xxxx">
+
+                        <label for="expiry">Expiry date</label>
+                        <input class="form-control" type="number" name="month" id="expiry" placeholder="Month">
+                        <input class="form-control" type="number" name="year" id="expiry" placeholder="Year">
+
+                        <label for="cvv">CVV</label>
+                        <input class="form-control mb-3" type="number" name="cvv" id="cvv">
+                    </div>
+                </div>  
 
                 <button class="btn btn-success">Purchase</button>
             </form>

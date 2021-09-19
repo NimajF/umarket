@@ -4,6 +4,7 @@ const passport = require('passport');
 const catchAsync = require('../utilities/catchAsync');
 const User = require('../models/users');
 const users = require('../controllers/users');
+const { isLoggedIn } = require('../middleware')
 
 router.route('/register')
     .get(users.renderRegister)
@@ -16,7 +17,7 @@ router.route('/login')
 
 router.get('/purchase/:productId', users.renderPurchase)    
 
-router.post('/cart', users.renderCart)
+// router.post('/cart', isLoggedIn, users.renderCart)
 
 router.get('/logout', users.logout)//"Passport Method"
 

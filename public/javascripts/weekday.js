@@ -30,7 +30,7 @@ module.exports = function weekday() {
     let d = weekday[day.getDay()];
     let dayNumber = day.getDay();
     let oneDayShipping = weekday[day.getDay()+1]
-    console.log(dayNumber)
+    // console.log(dayNumber)
     if (oneDayShipping === undefined){ // I thought if the current day is Friday (weekday[6]) the next day would make the variable return undefined, so if the array turns undefined, just reset the index to 0 (Sunday)
         oneDayShipping = weekday[0];
         // let newWeekday = weekday.length-1;

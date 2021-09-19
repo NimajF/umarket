@@ -55,13 +55,13 @@ module.exports.renderPurchase = async (req, res) => {
     res.render('users/purchase', { product, date })
 }
 
-module.exports.renderCart = async (req, res) => {
-    const product = req.body.product;
-    const user = req.body.user;
-    // const foundUser = await User.findByIdAndUpdate()
-    console.log(product, user)
-    res.render('users/cart', { product })
-}
+// module.exports.renderCart = async (req, res) => {
+//     const product = req.body.product;
+//     const user = req.body.user;
+//     // const foundUser = await User.findByIdAndUpdate()
+//     console.log(product, user)
+//     res.render('users/cart', { product })
+// } Feature coming Soon!
 
 
 module.exports.logout = (req, res) => {

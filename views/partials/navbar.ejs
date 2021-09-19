@@ -11,7 +11,7 @@
               Search categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item fw-bold" href="#">Categories</a></li>
+                <li><p class="mt-1 ms-3 fw-bold">Categories</p></li>
                 <li><hr class="dropdown-divider"></li>  
                 <% for (let c of categories) {%>
                   <% for (const cat in c) {%>
@@ -30,10 +30,10 @@
           <% if (currentUser) {%>
             <a class="nav-link me-2 usr" href="/products/newProduct"><b><i class="bi bi-tags b"></i></b> Sell</a>
             <a class="nav-link me-2 usr" href="#"><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
-            <a class="nav-link me-2 cart" href="/cart"><i class="bi bi-cart3 b"></i></a>
+            <a class="nav-link me-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>
             <a class="nav-link" href="/logout">Log out</a>
             <% } else {%>
-            <a class="nav-link me-2 ms-2 cart" href="/cart"><i class="bi bi-cart3 b"></i></a>   
+            <a class="nav-link me-2 ms-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>   
             <a class="nav-link me-2" href="/login">Log in</a>
             <a class="nav-link" href="/register">Sign up</a> 
             <%}%>   
