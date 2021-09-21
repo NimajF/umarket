@@ -17,6 +17,7 @@ router.route('/login')
 
 router.get('/purchase/:productId', users.renderPurchase)    
 
+router.post('/purchased', users.purchaseProduct)
 // router.post('/cart', isLoggedIn, users.renderCart)
 
 router.get('/logout', users.logout)//"Passport Method"

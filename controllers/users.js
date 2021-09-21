@@ -4,7 +4,7 @@ const Cart = require('../models/cart');
 const Product = require('../models/products');
 
 const Day = require('../public/javascripts/weekday');
-
+// const shippingMethod = require('../public/javascripts/shippingMethod')
 
 
 module.exports.renderRegister = (req, res) => {
@@ -52,8 +52,15 @@ module.exports.login = (req, res) => {
 module.exports.renderPurchase = async (req, res) => {
     const product = await Product.findById(req.params.productId).populate('author');
     const date = Day();
+    // const method = shippingMethod() 
     res.render('users/purchase', { product, date })
 }
+
+module.exports.purchaseProduct = (req, res) => {
+    res.send(req.body)
+}
+
+
 
 // module.exports.renderCart = async (req, res) => {
 //     const product = req.body.product;

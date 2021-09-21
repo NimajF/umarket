@@ -3,24 +3,23 @@
     <div class="purchaseDiv p-3">
         <h3><%= product.title %> </h3>
         <p>Buying to: <span class="text-muted"><%= product.author.username %></span></p>
-        <p>Total price: <span style="color: rgb(52, 179, 136);"><%= product.price %></span>  </p>
+        <p>Product price: <span style="color: rgb(52, 179, 136);">$<%= product.price %></span>  </p>
         <div class="purchaseForm">
-            <form action="#">
+            <form action="/purchased" method="POST">
                 <input type="hidden" name="product[id]" value="<%= product._id %>">
                 <input type="hidden" name="product[title]" value="<%= product.title %>">
-                <input type="hidden" name="product[price]" value="<%= product.price %>">
                 <input type="hidden" name="user[id]" value="<%= product.author._id %>">
                 <div class="shipping mt-4">
                     <h5>Choose you shipping method</h5>
                     <div>
                         <input type="radio" id="standardShipping" name="shipping[method]" value="standard">
-                        <label for="standardShipping">Standard Shipping</label>
+                        <label for="standardShipping">Standard Shipping $0</label>
                         <p style="color: rgb(38, 202, 147);">(1 month) Get it from <%= date[0] %> <%= date[1] %> to <%= date[2] %>  <%= date[1] %> </p> 
                         <!--  -->
                     </div>
                     <div>
                         <input type="radio" id="weekShipping" name="shipping[method]" value="week">
-                        <label for="weekShipping">7 days Shipping</label>
+                        <label for="weekShipping">7 days Shipping $4.99</label>
                         <p style="color: rgb(38, 202, 147);">(7 days) Get it next <%= date[3] %>  </p>
                     </div>
                     <div class="premium mb-5">
@@ -28,20 +27,29 @@
                         <label for="premiumShipping">Premium Shipping</label>
                         <p style="color: #212529;">(1 day) Get it tomorrow <%= date[4] %>  </p>
                     </div>
+                    <p class="totalPrice">Total: <span style="color: rgb(38, 202, 147);">$</span><span id="spanPrice"><%= product.price%></span></p>
+                    <input type="hidden" class="priceEncoded" name="user[totalPrice]">
                   </div>
                 <div class="payment">
                     <h6>Billing information</h6>
                     <div class="buyerInfo mt-5 me-5">
                         
                         <label for="name">First name</label>
-                        <input class="form-control mb-3" type="text" name="name" id="name" placeholder="First name">
+                        <input class="form-control mb-3" type="text" name="user[name]" id="name" placeholder="First name">
                         
                         <label for="last">Last name</label>
                         <input class="form-control mb-3" type="text" name="last" id="last" placeholder="Last name">
                         
                         <label for="country">Country</label>
-                        <select class="form-control mb-3" name="country" id="country">
-
+                        <select class="form-control mb-3" name="country" id="country" aria-placeholder="sada">
+                            <option value="brazil">Brazil</option>
+                            <option value="chile">Chile</option>
+                            <option value="china">China</option>
+                            <option value="france">France</option>
+                            <option value="germany">Germany</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="spain">Spain</option>
+                            <option value="usa" selected>United States</option>
                         </select>
                         
                         <label for="city">City</label>
