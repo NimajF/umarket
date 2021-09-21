@@ -5,14 +5,14 @@
         <p>Buying to: <span class="text-muted"><%= product.author.username %></span></p>
         <p>Product price: <span style="color: rgb(52, 179, 136);">$<%= product.price %></span>  </p>
         <div class="purchaseForm">
-            <form action="/purchased" method="POST">
+            <form action="/purchased" method="POST" class="validated-form" novalidate>
                 <input type="hidden" name="product[id]" value="<%= product._id %>">
                 <input type="hidden" name="product[title]" value="<%= product.title %>">
-                <input type="hidden" name="user[id]" value="<%= product.author._id %>">
+                <input type="hidden" name="product[userId]" value="<%= product.author._id %>">
                 <div class="shipping mt-4">
                     <h5>Choose you shipping method</h5>
                     <div>
-                        <input type="radio" id="standardShipping" name="shipping[method]" value="standard">
+                        <input type="radio" id="standardShipping" name="shipping[method]" value="standard" required>
                         <label for="standardShipping">Standard Shipping $0</label>
                         <p style="color: rgb(38, 202, 147);">(1 month) Get it from <%= date[0] %> <%= date[1] %> to <%= date[2] %>  <%= date[1] %> </p> 
                         <!--  -->
@@ -35,13 +35,19 @@
                     <div class="buyerInfo mt-5 me-5">
                         
                         <label for="name">First name</label>
-                        <input class="form-control mb-3" type="text" name="user[name]" id="name" placeholder="First name">
-                        
+                        <input class="form-control mb-3" type="text" name="user[name]" id="name" placeholder="First name" required>
+                        <div class="invalid-feedback  mb-3">
+                            First name is required.
+                        </div>
+
                         <label for="last">Last name</label>
-                        <input class="form-control mb-3" type="text" name="last" id="last" placeholder="Last name">
-                        
+                        <input class="form-control mb-3" type="text" name="user[lastName]" id="last" placeholder="Last name" required>
+                        <div class="invalid-feedback  mb-3">
+                            Last name is required.
+                        </div>
+
                         <label for="country">Country</label>
-                        <select class="form-control mb-3" name="country" id="country" aria-placeholder="sada">
+                        <select class="form-control mb-3" name="user[country]" id="country">
                             <option value="brazil">Brazil</option>
                             <option value="chile">Chile</option>
                             <option value="china">China</option>
@@ -53,25 +59,41 @@
                         </select>
                         
                         <label for="city">City</label>
-                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="City">
-                        
-                        <label for="address">Address</label>
-                        <input class="form-control mb-3" type="text" name="address" id="address" placeholder="Adress">
-                        
-                        <label for="postal">Postal code</label>
-                        <input class="form-control mb-3" type="number" name="postal" id="postal" placeholder="Postal code">
+                        <input class="form-control mb-3" type="text" name="user[city]" id="city" placeholder="City" required>
+                        <div class="invalid-feedback  mb-3">
+                            City is required.
+                        </div>
 
+                        <label for="address">Address</label>
+                        <input class="form-control mb-3" type="text" name="user[address]" id="address" placeholder="Adress" required>
+                        <div class="invalid-feedback  mb-3">
+                            Address is required.
+                        </div>
+
+                        <label for="postal">Postal code</label>
+                        <input class="form-control" type="text" name="user[postal]" id="postal" placeholder="Postal code" minlength="1" maxlength="9" required>
+                        <div class="invalid-feedback  mb-3">
+                            Please enter a valid postal code.
+                        </div>
                     </div>
                     <div class="creditCard mt-5">
                         <label for="credit">Card number</label>
-                        <input class="form-control mb-3" type="tel" name="credit" id="credit" placeholder="xxxx xxxx xxxx xxxx">
+                        <input class="form-control mb-3" type="tel" name="user[credit]" id="credit" placeholder="xxxx xxxx xxxx xxxx" required>
 
                         <label for="expiry">Expiry date</label>
-                        <input class="form-control" type="number" name="month" id="expiry" placeholder="Month">
-                        <input class="form-control" type="number" name="year" id="expiry" placeholder="Year">
-
+                        <input class="form-control" type="number" name="user[month]" id="expiry" placeholder="Month" min="1" max="12" required>
+                        <div class="invalid-feedback  mb-3">
+                            Please enter a valid month.
+                        </div>
+                        <input class="form-control mb-3" type="number" name="user[year]" id="expiry" placeholder="Year" min="2021" max="2041" required>
+                        <div class="invalid-feedback mb-3">
+                            Please enter a valid year.
+                        </div>
                         <label for="cvv">CVV</label>
-                        <input class="form-control mb-3" type="number" name="cvv" id="cvv">
+                        <input class="form-control" type="number" name="user[cvv]" id="cvv" min="100" max="999" required>
+                        <div class="invalid-feedback">
+                            Credit card number must be between 3 and 4 digits.
+                        </div>
                     </div>
                 </div>  
 

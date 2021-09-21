@@ -4,7 +4,7 @@ const Cart = require('../models/cart');
 const Product = require('../models/products');
 
 const Day = require('../public/javascripts/weekday');
-// const shippingMethod = require('../public/javascripts/shippingMethod')
+
 
 
 module.exports.renderRegister = (req, res) => {
@@ -15,8 +15,10 @@ module.exports.register = async (req, res) => {
         const { email, username, password} = req.body
         const user = new User({email, username});
         const regUser = await User.register(user, password)//Passport! 
+        user.reputation = 0;
         console.log(regUser)
-        res.redirect('/')
+        await user.save();
+        res.redirect('/products')
     } catch (e) {
         res.redirect('/register')
     }
@@ -56,8 +58,27 @@ module.exports.renderPurchase = async (req, res) => {
     res.render('users/purchase', { product, date })
 }
 
-module.exports.purchaseProduct = (req, res) => {
-    res.send(req.body)
+module.exports.purchaseProduct = async (req, res) => {
+    const { userId } = req.body.product;
+    const { id } = req.body.user;
+    const { method } = req.body.shipping;
+    
+    const productAuthor = await User.findById(userId);
+    productAuthor.reputation += 100;
+    await productAuthor.save(); //When the user buys a product, the autor of the product gets +100 of reputation
+    console.log(productAuthor.reputation)
+    req.session.destroy();
+    res.redirect('/purchased/success')
+        
+    
+    
+    
+    
+    
+}
+
+module.exports.renderPurchasedProduct = (req, res) => {
+    res.render('users/purchasedProduct')
 }
 
 

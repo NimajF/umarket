@@ -15,10 +15,11 @@ router.route('/login')
     .post(passport.authenticate('local', { failureRedirect: '/login' }), users.login)
 
 
-router.get('/purchase/:productId', users.renderPurchase)    
-
+router.get('/purchase/:productId', isLoggedIn, users.renderPurchase)    
+router.get('/purchased/success', users.renderPurchasedProduct)
 router.post('/purchased', users.purchaseProduct)
 // router.post('/cart', isLoggedIn, users.renderCart)
+
 
 router.get('/logout', users.logout)//"Passport Method"
 
