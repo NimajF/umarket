@@ -24,10 +24,12 @@ const catchAsync = require('./utilities/catchAsync')
 // Routes
 const userRoutes = require('./routes/users')
 const ProductRoutes = require('./routes/products');
-const reviewRoutes = require('./routes/reviews')
+const reviewRoutes = require('./routes/reviews');
+const orderRoutes = require('./routes/orders');
 
 const Product = require('./models/products');
 const products = require('./controllers/products');
+
 // const categories = require('../seeds/categories')
 const User = require('./models/users')
 const Review = require('./models/reviews')
@@ -97,7 +99,7 @@ app.get('fakeUser', async (req, res) => {
 app.use('/', userRoutes);
 app.use('/products', ProductRoutes);
 app.use('/products/:id/reviews', reviewRoutes);
-
+app.use('/order', orderRoutes);
 
 
 

@@ -1,4 +1,3 @@
-const { findByIdAndDelete } = require('../models/products');
 const Product = require('../models/products');
 const Review = require('../models/reviews');
 

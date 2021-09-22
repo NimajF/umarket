@@ -5,7 +5,7 @@
         <p>Buying to: <span class="text-muted"><%= product.author.username %></span></p>
         <p>Product price: <span style="color: rgb(52, 179, 136);">$<%= product.price %></span>  </p>
         <div class="purchaseForm">
-            <form action="/purchased" method="POST" class="validated-form" novalidate>
+            <form action="/order/purchased" method="POST" class="validated-form" novalidate>
                 <input type="hidden" name="product[id]" value="<%= product._id %>">
                 <input type="hidden" name="product[title]" value="<%= product.title %>">
                 <input type="hidden" name="product[userId]" value="<%= product.author._id %>">

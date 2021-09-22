@@ -1,4 +1,3 @@
-const { populate } = require('../models/products');
 const Product = require('../models/products');
 const categories = require('../seeds/categories')
 
