@@ -7,16 +7,18 @@ const Order = require('../models/order');
 const Day = require('../public/javascripts/weekday');
 
 module.exports.renderPurchase = async (req, res) => {
+    const { price, qty }  = req.query.product;
+    console.log(req.query)
     const product = await Product.findById(req.params.productId).populate('author');
     const date = Day();
     // const method = shippingMethod() 
-    res.render('users/purchase', { product, date })
+    res.render('users/purchase', { product, date, price, qty })
 }
 
 module.exports.purchaseProduct = async (req, res) => {
     const { userId } = req.body.product;
    
-    const { id, name, country, address } = req.body.user;
+    const { id, name, country, address, quantity } = req.body.user;
     const { method, } = req.body.shipping;
     
     const productAuthor = await User.findById(userId);
@@ -24,6 +26,7 @@ module.exports.purchaseProduct = async (req, res) => {
     const order = new Order({
         orderUser: req.user._id,
         method: method,
+        quantity: quantity,
         country: country,
         address: address,
         name: name
@@ -48,7 +51,7 @@ module.exports.orderSuccess = async (req, res) => {
     const { orderId } = req.params;
     const foundOrder = await Order.findById(orderId);
     if (req.user.equals(foundOrder.orderUser)){ // If the current logged user ID is equals to the user ID that made the order, get the response
-        res.send('asdsa') 
+        res.render('users/purchasedProduct', {foundOrder}) 
     } else {
         res.send('No')
     }

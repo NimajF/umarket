@@ -23,19 +23,47 @@
             <hr>
             
             <% if (foundProduct.price < 200) {%> 
-            <h3><b class="pe-3">On sale!</b>$ <%= foundProduct.price %> </h3> 
-            <% } else {%> 
-            <h3 class="mb-3" style="color: rgb(127, 255, 212);">$ <%= foundProduct.price %></h3>
+            <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span><%= foundProduct.price %></span> </h3>
+            <label for="qty">Select quantity:</label>
+            <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select> 
+            <% } else {%>
+            <h3 class="mb-3 productPrice" style="color: rgb(127, 255, 212);">$ <span id="price"><%= foundProduct.price %></span></h3>
+            <label for="qty">Select quantity:</label> 
+            <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <!-- Here I could have used EJS and a for loop to display qty 1 to 10 instead of hardcoding, but there are 10 posible values and are not too much -->
             <% } %>
             <div class="desc">
                 <h5>Product description</h4>
                 <p class="mb-4"><%= foundProduct.description %></p>
             </div>
-            <form action="/order/purchase/<%= foundProduct._id %>" method="GET">
+            <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
                 <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
                 <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
-                <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                <input type="hidden" class="encodedPriceForm" name="product[price]" value="<%= foundProduct.price %>">
                 <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
+                <input type="hidden" class="encodedQty" name="product[qty]" value="<%= foundProduct.author._id %>">
                 <button class="btn btn-success mb-3 btnBuy">Buy</button>
             </form>
             <form action="/cart">

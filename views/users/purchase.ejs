@@ -1,14 +1,14 @@
 <% layout('layouts/boilerplate')%>
 <section class="purchaseSection">
     <div class="purchaseDiv p-3">
-        <h3><%= product.title %> </h3>
+        <h3>x<span><%= qty %> </span> <%= product.title %> </h3>
         <p>Buying to: <span class="text-muted"><%= product.author.username %></span></p>
-        <p>Product price: <span style="color: rgb(52, 179, 136);">$<%= product.price %></span>  </p>
         <div class="purchaseForm">
             <form action="/order/purchased" method="POST" class="validated-form" novalidate>
                 <input type="hidden" name="product[id]" value="<%= product._id %>">
                 <input type="hidden" name="product[title]" value="<%= product.title %>">
                 <input type="hidden" name="product[userId]" value="<%= product.author._id %>">
+                
                 <div class="shipping mt-4">
                     <h5>Choose you shipping method</h5>
                     <div>
@@ -27,9 +27,10 @@
                         <label for="premiumShipping">Premium Shipping</label>
                         <p style="color: #212529;">(1 day) Get it tomorrow <%= date[4] %>  </p>
                     </div>
-                    <p class="totalPrice">Total: <span style="color: rgb(38, 202, 147);">$</span><span id="spanPrice"><%= product.price%></span></p>
+                    <p class="totalPrice">Total: <span style="color: rgb(38, 202, 147);">$</span><span id="spanPrice"><%= price%></span></p>
                     <input type="hidden" class="priceEncoded" name="user[totalPrice]">
                   </div>
+                  <hr>
                 <div class="payment">
                     <h6>Billing information</h6>
                     <div class="buyerInfo mt-5 me-5">

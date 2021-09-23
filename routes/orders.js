@@ -10,6 +10,6 @@ router.get('/purchase/:productId', isLoggedIn, orders.renderPurchase)
 // router.get('/purchased/success', orders.renderPurchasedProduct)
 router.post('/purchased', orders.purchaseProduct)
 // router.post('/cart', isLoggedIn, orders.renderCart)
-router.get('/purchased/:orderId', isLoggedIn, catchAsync(orders.orderSuccess))
+router.get('/purchased/:orderId', isLoggedIn, catchAsync(orders.orderSuccess)) //isloggedIn just to test
 
 module.exports = router;

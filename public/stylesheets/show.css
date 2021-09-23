@@ -66,6 +66,10 @@ body{
     padding-left: 2rem;
     padding-right: 3rem;
 }
+.prodInfo #qty{
+    width: 2.8rem;
+
+} 
 
 .btnBuy{
     background-color: rgb(127, 255, 212);
