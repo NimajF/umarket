@@ -8,22 +8,22 @@
                 <input type="hidden" name="product[id]" value="<%= product._id %>">
                 <input type="hidden" name="product[title]" value="<%= product.title %>">
                 <input type="hidden" name="product[userId]" value="<%= product.author._id %>">
-                
+                <input type="hidden" name="product[qty]" value="<%= qty %>">
                 <div class="shipping mt-4">
                     <h5>Choose you shipping method</h5>
                     <div>
-                        <input type="radio" id="standardShipping" name="shipping[method]" value="standard" required>
+                        <input type="radio" id="standardShipping" name="shipping[method]" value="Standard" required>
                         <label for="standardShipping">Standard Shipping $0</label>
                         <p style="color: rgb(38, 202, 147);">(1 month) Get it from <%= date[0] %> <%= date[1] %> to <%= date[2] %>  <%= date[1] %> </p> 
                         <!--  -->
                     </div>
                     <div>
-                        <input type="radio" id="weekShipping" name="shipping[method]" value="week">
+                        <input type="radio" id="weekShipping" name="shipping[method]" value="Week">
                         <label for="weekShipping">7 days Shipping $4.99</label>
                         <p style="color: rgb(38, 202, 147);">(7 days) Get it next <%= date[3] %>  </p>
                     </div>
                     <div class="premium mb-5">
-                        <input type="radio" id="premiumShipping" name="shipping[method]" value="premium">
+                        <input type="radio" id="premiumShipping" name="shipping[method]" value="Premium">
                         <label for="premiumShipping">Premium Shipping</label>
                         <p style="color: #212529;">(1 day) Get it tomorrow <%= date[4] %>  </p>
                     </div>

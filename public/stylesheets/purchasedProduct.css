@@ -21,6 +21,15 @@
 
 .purchaseDetails{
     background-color: rgb(220, 220, 220);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+}
+.purchaseDetails.transition{
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
 }
 .purchaseDetails h2{
     font-size: 1.2em;

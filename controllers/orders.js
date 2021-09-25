@@ -16,17 +16,19 @@ module.exports.renderPurchase = async (req, res) => {
 }
 
 module.exports.purchaseProduct = async (req, res) => {
-    const { userId } = req.body.product;
+    const { id, userId, qty } = req.body.product;
    
-    const { id, name, country, address, quantity } = req.body.user;
+    const { name, country, address } = req.body.user;
     const { method, } = req.body.shipping;
     
+    const foundProduct = await Product.findById(id);
     const productAuthor = await User.findById(userId);
 
     const order = new Order({
         orderUser: req.user._id,
+        product: foundProduct,
         method: method,
-        quantity: quantity,
+        quantity: qty,
         country: country,
         address: address,
         name: name
@@ -36,22 +38,17 @@ module.exports.purchaseProduct = async (req, res) => {
     await order.save();
     await productAuthor.save(); //When the user buys a product, the autor of the product gets +100 of reputation
     console.log(productAuthor.reputation)
+    console.log(order.quantity)
     res.redirect(`/order/purchased/${order._id}`)
-    
-    
-        
-    
-    
-    
     
     
 }
 
 module.exports.orderSuccess = async (req, res) => {
     const { orderId } = req.params;
-    const foundOrder = await Order.findById(orderId);
+    const foundOrder = await Order.findById(orderId).populate('product');
     if (req.user.equals(foundOrder.orderUser)){ // If the current logged user ID is equals to the user ID that made the order, get the response
-        res.render('users/purchasedProduct', {foundOrder}) 
+        res.render('users/purchasedProduct', { foundOrder }) 
     } else {
         res.send('No')
     }

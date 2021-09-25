@@ -15,9 +15,15 @@
     <section class="congratsSec">
         <div class="congratsDiv p-3">
             <h1>Thank you, your order has been placed succesfully!</h1>
-            <div class="purchaseDetails mt-4 p-2">
+            <h5>Order number: <%= foundOrder.product._id %> </h5>
+            <button class="btn btn-warning btnDetails">See details</button>
+            <div class="purchaseDetails mt-4 p-2 mb-3" hidden>
                 <h2>Order details</h2>
-                <p></p>
+                <ul>
+                    <li><b>Product/s:</b> x<%= foundOrder.quantity %> <%= foundOrder.product.title %> </li>
+                    <li><b>Shipping method:</b> <%= foundOrder.method %> </li>
+                    <li><b>Address:</b> <%= foundOrder.address %> </li>
+                </ul>
             </div>
             <a href="/products" class="btn btn-secondary">Continue shopping</a>
         </div>
@@ -26,6 +32,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <!-- <script src="javascripts/animations.js"></script> -->
+    <script src="/javascripts/animations.js"></script>
 </body>
 </html>

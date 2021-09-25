@@ -39,3 +39,15 @@
 // function tags(){
 //     tags.className.replace
 // }
+
+
+const btnDetails = document.querySelector('.btnDetails').addEventListener('click', showDetails);
+const details = document.querySelector('.purchaseDetails');
+
+function showDetails(){
+    details.removeAttribute('hidden')
+    details.classList.add('transition');
+    details.classList.remove('mt-4');
+    details.classList.add('mt-1');
+    // details.style.transform = 'translateY(10px)';
+}
