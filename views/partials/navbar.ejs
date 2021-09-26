@@ -29,7 +29,7 @@
         <div class="navbar-nav ms-auto d-flex justify-content-end align-items-end links">
           <% if (currentUser) {%>
             <a class="nav-link me-2 usr" href="/products/newProduct"><b><i class="bi bi-tags b"></i></b> Sell</a>
-            <a class="nav-link me-2 usr" href="#"><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
+            <a class="nav-link me-2 usr" href="/profile/<%=currentUser._id%> "><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
             <a class="nav-link me-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>
             <a class="nav-link" href="/logout">Log out</a>
             <% } else {%>
@@ -44,16 +44,4 @@
       </div>
     </div>
   </nav>
-<script>
-  let prevScrollpos = window.pageYOffset; //Default Y position
-  // window.pageYOffset returns the number of pixels the document is currently scrolled along the vertical axis (Y).
-  window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset; // Udated position (whe the user scrolls)
-    if (prevScrollpos > currentScrollPos) { 
-      document.getElementById("D").style.top = "0"; // if the previous position is greater than the current, "show" the navbar
-    } else {
-      document.getElementById("D").style.top = "-4rem"; // if the previous position is less than the current, "hide" the navbar
-    }
-    prevScrollpos = currentScrollPos; // to swap or update positions
-  }
-</script>
+<script src="/javascripts/navbar.js"></script>

@@ -51,3 +51,6 @@ function showDetails(){
     details.classList.add('mt-1');
     // details.style.transform = 'translateY(10px)';
 }
+
+//NAVBAR
+

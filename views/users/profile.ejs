@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate')%>
+<section class="profileSec">
+    <div class="profileDiv">
+        <div class="profileA">
+            <h1><%= foundUser.username %>'s profile </h1>
+            <a href="/logout">Log out</a>
+        </div>
+        <div class="ProfileInfo">
+            <% if (foundUserOrders.length > 1) {%>
+                <% for (u of foundUserOrders) {%>
+                        <p><%= u.product.title %> </p>
+                    <% } %> 
+            <% } else if (foundUserOrders.length <= 1){%>
+                <p><%= foundUserOrders[0].product.title %></p>
+            <% } %>     
+        </div>
+    </div>
+</section>

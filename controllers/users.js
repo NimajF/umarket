@@ -2,8 +2,9 @@ const passport = require('passport');
 const User = require('../models/users');
 const Cart = require('../models/cart');
 const Product = require('../models/products');
-
+const Order = require('../models/order')
 const Day = require('../public/javascripts/weekday');
+const { array } = require('joi');
 
 
 
@@ -51,7 +52,12 @@ module.exports.login = (req, res) => {
     res.redirect(redirectUrl);
 }
 
-
+module.exports.renderProfile = async (req, res) => {
+    const { userId } = req.params;
+    const foundUser = await User.findById(userId)
+    const foundUserOrders = await Order.find({orderUser: foundUser._id}).populate('product') // finds all user's orders.
+    res.render('users/profile', { foundUser, foundUserOrders })
+}
 
 
 // module.exports.renderCart = async (req, res) => {
