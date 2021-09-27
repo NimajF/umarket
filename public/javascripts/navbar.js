@@ -12,15 +12,16 @@ let prevScrollpos = window.pageYOffset; //Default Y position
 }
 
 const navbarA = document.querySelector('.usr')
-navbarA.addEventListener('mouseenter', anchorFocus)
+navbarA.addEventListener('mouseenter', anchorFocus, false)
 navbarA.addEventListener('mouseleave', anchorFocusLeave)
 
 function anchorFocus(){
-    const b = document.querySelector('.b')
+
+    const b = document.querySelector('.usr .b')
     b.style.color = "rgb(127, 255, 212)"
 }
 
 function anchorFocusLeave(){
-    const b = document.querySelector('.b')
+    const b = document.querySelector('.usr .b')
     b.style.color = "rgb(151, 151, 151)"
 }

@@ -1,11 +1,27 @@
 <% layout('layouts/boilerplate')%>
-<section class="profileSec">
-    <div class="profileDiv">
-        <div class="profileA">
+<section class="profile-section">
+    <div class="profile-div">
+        <div class="profile-anchors">
             <h1><%= foundUser.username %>'s profile </h1>
+            <div class="reputation">
+                <p><b>Reputation:</b> <%= foundUser.reputation %> U-points</p>
+                <button>about</button>
+                <div class="popup" hidden>
+                    <div class="popup-header">
+                        <h3>U-Points</h3>
+                        <button class="popup-close">Close</button>
+                    </div>
+                    <div class="popup-text">
+                        U-Points are the seller reputation. Once a product is sold, the seller automatically receives +100 U-Points. The more points a seller has, better its reputation, and makes buyers get interest easily
+                    </div>
+                </div>
+                <div id="overlay"></div>
+            </div>
+            
             <a href="/logout">Log out</a>
         </div>
-        <div class="ProfileInfo">
+        <div class="Profile-info">
+            <h2>Orders</h2>
             <% if (foundUserOrders.length > 1) {%>
                 <% for (u of foundUserOrders) {%>
                         <p><%= u.product.title %> </p>
