@@ -8,7 +8,7 @@
 }
 
 .navbar-brand{
-    transition: .3s ease;
+    transition: .3s ease-in-out;
 }
 .navbar-brand:hover{
     transform: translateY(1px) scale(1.1);

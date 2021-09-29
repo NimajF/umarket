@@ -1,7 +1,12 @@
-.profile-section{
-    height: 100%;
+.profileBody{
     background-color: rgb(107, 211, 176);
-    background-size: cover;
+}
+
+
+.profile-section{
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,12 +16,25 @@
     height: 50vw;
     width: 70rem;
     margin-top: 7rem;
+    border-radius: 7px;
     background-color: rgb(240, 255, 255);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     display: flex;
     flex-direction: row;
 }
-
+.profile-anchors{
+    padding: 1rem;
+    background-color: rgb(241, 248, 248);
+    width: 20rem;
+    border-right: 1px solid rgb(110, 110, 110);
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.profile-anchors a{
+    margin-bottom: 1rem;
+}
 .reputation{
     display: flex;
     flex-direction: row;
@@ -24,8 +42,14 @@
 }
 .reputation button{
     margin-left: 1rem;
-    border: none;
+    border: 1px solid rgb(219, 219, 219);
     border-radius: 3px;
+    transition: .3s ease-in-out;
+}
+.reputation button:hover{
+    cursor: pointer;
+    background-color: rgb(146, 250, 215);
+    border: 1px solid rgb(146, 250, 215);
 }
 
 .popup{
@@ -36,12 +60,12 @@
     max-width: 80%;
     z-index: 10;
     transform: translate(-50%, -50%);
-    border: 2px solid rgb(107, 211, 176);
+    border: 1px solid rgb(107, 211, 176);
     background-color: azure;
     border-radius: 5px;
 }
 .popup-header{
-    border-bottom: 2px solid rgb(107, 211, 176);
+    border-bottom: 1px solid rgb(107, 211, 176);
     display: flex;
     justify-content: space-between;
     padding: .5rem;
@@ -67,12 +91,7 @@
     pointer-events: all;
 }
 
-.profile-anchors{
-    padding: 1rem;
-    background-color: rgb(241, 248, 248);
-    width: 20rem;
-    border-right: 1px solid rgb(110, 110, 110);
-}
+
 
 .profile-info h2{
     font-size: 1rem;

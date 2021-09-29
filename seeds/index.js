@@ -29,7 +29,7 @@ const seedDB = async () => {
             title: productNames[ran],
             price: price,
             categories: 'Technology',
-            author: '614a55aa3307cc340f6507f2',
+            author: '6154829e501783aeae6bedd6',
             images: [
                 {
                     url: 'https://res.cloudinary.com/dsscydgze/image/upload/v1631403556/Umarket/photo-1573376671570-bc0e9aab13a1_rfnxiv.jpg',

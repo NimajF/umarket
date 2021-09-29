@@ -52,5 +52,5 @@ function showDetails(){
     // details.style.transform = 'translateY(10px)';
 }
 
-//NAVBAR
+
 
