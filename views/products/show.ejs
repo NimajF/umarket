@@ -17,7 +17,7 @@
             </div>
         <div class="prodInfo">
             <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2>
-            <p class="mb-1">By <b><%= foundProduct.author.username %></b></p>
+            <p class="mb-1">By <a href="/profile/<%= foundProduct.author._id %> "><%= foundProduct.author.username %></a></p>
             <p><%= foundProduct.author.reputation %> U-Points</p>
             <br>
             <span class="text-muted"><%= foundProduct.categories %></span>

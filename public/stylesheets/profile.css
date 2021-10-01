@@ -15,6 +15,7 @@
 .profile-div{
     height: 50vw;
     width: 70rem;
+    min-width: 40rem;
     margin-top: 7rem;
     border-radius: 7px;
     background-color: rgb(240, 255, 255);
@@ -25,7 +26,7 @@
 .profile-anchors{
     padding: 1rem;
     background-color: rgb(241, 248, 248);
-    width: 20rem;
+    width: 15rem;
     border-right: 1px solid rgb(110, 110, 110);
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
@@ -39,12 +40,13 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    border-bottom: 1px solid rgb(110, 110, 110);
 }
 .reputation button{
     margin-left: 1rem;
     border: 1px solid rgb(219, 219, 219);
     border-radius: 3px;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 .reputation button:hover{
     cursor: pointer;
@@ -70,6 +72,9 @@
     justify-content: space-between;
     padding: .5rem;
 }
+.popup-header button{
+    padding: .5rem;
+}
 .popup-text{
     padding: .5rem;
 }
@@ -91,8 +96,15 @@
     pointer-events: all;
 }
 
-
-
+.profile-info{
+    padding: 1rem;
+}
 .profile-info h2{
-    font-size: 1rem;
+    font-size: 2rem;
+}
+
+.profile-info .profile-items{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }

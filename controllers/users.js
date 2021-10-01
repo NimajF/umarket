@@ -56,7 +56,8 @@ module.exports.renderProfile = async (req, res) => {
     const { userId } = req.params;
     const foundUser = await User.findById(userId)
     const foundUserOrders = await Order.find({orderUser: foundUser._id}).populate('product') // finds all user's orders.
-    res.render('users/profile', { foundUser, foundUserOrders })
+    const userProducts = await Product.find({author: foundUser._id}).populate('author') // finds all user's (for sale) products.
+    res.render('users/profile', { foundUser, foundUserOrders, userProducts })
 }
 
 

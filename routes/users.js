@@ -14,7 +14,7 @@ router.route('/login')
     .get(users.renderLogin)
     .post(passport.authenticate('local', { failureRedirect: '/login' }), users.login)
 
-router.get('/profile/:userId', isLoggedIn, catchAsync(users.renderProfile))
+router.get('/profile/:userId', catchAsync(users.renderProfile))
 router.get('/logout', users.logout)//"Passport Method"
 
 module.exports = router;

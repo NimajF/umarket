@@ -13,26 +13,40 @@
                             <button class="popup-close">Close</button>
                         </div>
                         <div class="popup-text">
-                            U-Points are the seller reputation. Once a product is sold, the seller automatically receives +100 U-Points. The more points a seller has, better its reputation, and makes buyers get interest easily
+                            U-Points are the seller reputation. Once a product is sold, the seller automatically receives +100 U-Points. The more points a seller has, better its reputation, and makes buyers get interest easily.
                         </div>
                     </div>
                     
                 </div>
-                <% if (foundUser.totalSoldProducts === 0) {%>
-                    <p> No products sold </p>
-                <% } else {%>     
-                <p><%= foundUser.totalSoldProducts %> products sold</p>
-                <% } %> 
+                <% if (currentUser && currentUser._id.equals(foundUser._id)) {%>
+                    <% if (foundUser.totalSoldProducts === 0) {%>
+                        <p> No products sold </p>
+                    <% } else {%>     
+                    <p><%= foundUser.totalSoldProducts %> products sold</p>
+                    <% } %>
+                    <a href="#">Settings</a>
+                    <a href="/logout">Log out</a> 
+                <% } %>  
                 <div id="overlay"></div>
-                <a href="#">Settings</a>
-                <a href="/logout">Log out</a>
+                   
             </div>
-            <div class="Profile-info">
-                <h2>Orders</h2>
+            <div class="profile-info">
+                <% if (currentUser && currentUser._id.equals(foundUser._id)) {%>
+                    <h2>Orders</h2>
                 <% if (foundUserOrders.length) {%>
                     <% for (u of foundUserOrders) {%>
                             <p>x<%= u.quantity %> <%= u.product.title %> </p>
                         <% } %> 
+                <% } %>
+                <% } else{%>     
+                    <div class="profile-items">
+                        <h2>Products for sale</h2>
+                        <% if (userProducts) {%>
+                            <% for (let p of userProducts) {%> 
+                                <a href="/products/<%=p._id%>/show"><%= p.title %> </a>
+                            <% } %> 
+                        <% } %>     
+                    </div>
                 <% } %> 
             </div>
         </div>
