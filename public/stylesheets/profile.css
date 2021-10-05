@@ -38,7 +38,6 @@
 }
 .reputation{
     display: flex;
-    flex-direction: row;
     align-items: baseline;
     border-bottom: 1px solid rgb(110, 110, 110);
 }
@@ -98,13 +97,30 @@
 
 .profile-info{
     padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
+/* .profile-info .userProducts{
+   
+}   */
 .profile-info h2{
     font-size: 2rem;
 }
+.profile-info #titles{
+    font-size: 2rem;
+    border-bottom: 1px solid rgb(87, 87, 87);
+    border-radius: 2px;
+}
 
-.profile-info .profile-items{
+.profile-products{
+    padding: 1rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    
+}
+.otherUserProducts{
+    display: flex;
+    flex-direction: column;
 }

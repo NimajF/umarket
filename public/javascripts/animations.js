@@ -1,16 +1,26 @@
 
 // document.querySelectorAll('.cardAnim').forEach(element => {
-//     element.addEventListener('mouseover', hover => {
+//     element.addEventListener('mouseenter', hover => {
+//         const btn = document.querySelector('.btnAnim');
+//         btn.setAttribute('id', 'about')
+//         // btn.innerText = "about"
+//         // btn.classList.add('btn')
+//         // btn.setAttribute('id', 'about')
+//         // element.appendChild(btn)
         
-//         element.style.height = '21rem'
-//         event.stopPropagation();
+    
 //     })
-//     element.addEventListener('mouseout', out => {
-//         element.style.height = '20rem'
+//     element.addEventListener('mouseleave', out => {
+//         const btn = document.getElementById('about')
+//         element.removeChild(btn)
 //     })
     
-//   })
-
+// })
+// const homeProductCard = document.querySelector('.cardAnim').addEventListener('mouseenter', productAbout)
+// function productAbout(){
+//     const price = document.querySelector('.anim').removeAttribute('hidden');
+//     const btnAnim = document.querySelector('.btnAnim').removeAttribute('hidden')
+// }
 
 
 

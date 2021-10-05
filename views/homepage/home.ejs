@@ -16,7 +16,7 @@
     <div class="container">
       <div id="carouselExampleControls" class="carousel slide mainCar" data-bs-ride="carousel">
         <div class="welcome">
-          <h1 class="me-5 ms-5 mb-3">Welcome to <span style="color: rgb(75, 255, 195);">Umarket</span>!</h1>
+          <h1 class="me-5 ms-5 mb-3">Welcome to <span id="u">U</span>market!</h1>
           <div class="welcomeTextP">
             <p>Buy your dreams from anywhere</p>
             <p>Start shopping or <a href="/register" class="btn btn-success ms-2 dada">Sign up</a></p>
@@ -43,10 +43,10 @@
       
     </div>
     <h2 class="indexProducts">Trending Products</h2>
-    <div class="trend me-4">
+    <div class="trend">
       <% for (let c of products) {%>
         
-        <div class="card ms-4 cardAnim">
+        <div class="card cardAnim">
           <div class="image">
             <img src=" <%= c.images[0].url %>" class="card-img-top" alt="">
           </div>
@@ -55,9 +55,9 @@
             <% if (c.price < 200) {%>
               <p class="card-text text-muted"><b>On sale!</b> $<%= c.price %> </p> 
             <% }else {%>
-              <p class="card-tex anim" style="color: rgb(127, 255, 212); font-weight: bold;" hidden> $<%= c.price %> </p> 
+              <p class="card-text anim" style="color: rgb(127, 255, 212); font-weight: bold;"> $<%= c.price %> </p> 
             <% } %> 
-              <a href="/products/<%= c._id %>/show" class="btn anim" id="about">About</a>
+              <a href="/products/<%= c._id %>/show" class="btn btnAnim" id="about">About</a>
             </div>
           </div> 
       <% } %> 

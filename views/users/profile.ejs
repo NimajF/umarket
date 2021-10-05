@@ -5,7 +5,11 @@
             <div class="profile-anchors">
                 <h1><%= foundUser.username %>'s profile </h1>
                 <div class="reputation">
+                    <% if (foundUser.reputation >= 100) {%> 
+                    <p><b>Reputation:</b> <%= foundUser.reputation %> U-points <br><i class="bi bi-trophy" style="color: rgb(248, 220, 63);"></i></p>
+                    <% } else {%>
                     <p><b>Reputation:</b> <%= foundUser.reputation %> U-points</p>
+                    <% } %>  
                     <button class="popup-button">about</button>
                     <div class="popup" hidden>
                         <div class="popup-header">
@@ -30,25 +34,44 @@
                 <div id="overlay"></div>
                    
             </div>
-            <div class="profile-info">
+           
                 <% if (currentUser && currentUser._id.equals(foundUser._id)) {%>
-                    <h2>Orders</h2>
-                <% if (foundUserOrders.length) {%>
-                    <% for (u of foundUserOrders) {%>
-                            <p>x<%= u.quantity %> <%= u.product.title %> </p>
-                        <% } %> 
-                <% } %>
-                <% } else{%>     
-                    <div class="profile-items">
-                        <h2>Products for sale</h2>
-                        <% if (userProducts) {%>
+                <div class="profile-info">
+                    <div class="userOrders">
+                        <p id="titles"><i class="bi bi-box-seam"></i> My orders</p>
+                        <% if (foundUserOrders.length) {%>
+                            <% for (u of foundUserOrders) {%>
+                                    <a href="/order/purchased/<%= u._id %> ">x<%= u.quantity %> <%= u.product.title %> </a>
+                                <% } %> 
+                        <% } %>
+                    </div>
+                    <div class="userProducts">
+                        <p id="titles"><i class="bi bi-tags"></i> My products</p>
+                        <% if (userProducts.length) {%>
                             <% for (let p of userProducts) {%> 
                                 <a href="/products/<%=p._id%>/show"><%= p.title %> </a>
                             <% } %> 
-                        <% } %>     
+                        <% } else {%>
+                            <p style="font-size: 1rem;">No products for sale</p>
+                        <% } %>
+                    </div>
+                </div>       
+                <% } else{%>     
+                    <div class="profile-products">
+                        <h2>Products for sale</h2>
+                        <div class="otherUserProducts">
+                        <% if (userProducts) {%>
+                            <% for (let p of userProducts) {%> 
+                                <a href="/products/<%=p._id%>/show"><%= p.title %></a>
+   
+                            <% } %> 
+                        <% } else {%>
+                            <p style="font-size: 1rem;">No products for sale</p>
+                        <% } %>
+                        </div>     
                     </div>
                 <% } %> 
-            </div>
+            
         </div>
     </section>
     <script src="/javascripts/profile.js"></script>

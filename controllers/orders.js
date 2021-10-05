@@ -47,9 +47,10 @@ module.exports.purchaseProduct = async (req, res) => {
 
 module.exports.orderSuccess = async (req, res) => {
     const { orderId } = req.params;
+    const date = Day();
     const foundOrder = await Order.findById(orderId).populate('product');
     if (req.user.equals(foundOrder.orderUser)){ // If the current logged user ID is equals to the user ID that made the order, get the response
-        res.render('users/purchasedProduct', { foundOrder }) 
+        res.render('users/purchasedProduct', { foundOrder, date }) 
     } else {
         res.send('No')
     }

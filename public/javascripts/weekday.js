@@ -10,7 +10,7 @@ module.exports = function weekday() {
     weekday[6] = "Saturday";
 
     // console.log(weekday[day.getDay()+1])
-    
+    let status = false;
 
 
     let month = new Array();
@@ -49,6 +49,7 @@ module.exports = function weekday() {
     if(nextMonth === undefined){ // If the current month is December (month[11]) the next month would make the variable return undefined, so if the array turns undefined, just reset the index to 0 (January)
         nextMonth = month[0]
     }
+
     return [ currentMonth, currentNumber, nextMonth, d, oneDayShipping ];
     //console.log(currentDay)
 }
