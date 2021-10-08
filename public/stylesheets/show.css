@@ -66,6 +66,20 @@ body{
     padding-left: 2rem;
     padding-right: 3rem;
 }
+.prodInfo .stock-message{
+    font-size: 1.5rem;
+    color: rgb(31, 216, 154);
+}
+.prodInfo .no-stock{
+    font-size: 1.5rem;
+    color: rgb(180, 39, 4);
+}
+.prodInfo .stock-message.noStock{
+    font-size: 1.5rem;
+    color: rgb(180, 39, 4);
+}
+
+
 .prodInfo #qty{
     width: 2.8rem;
 

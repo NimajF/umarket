@@ -36,8 +36,10 @@ module.exports.purchaseProduct = async (req, res) => {
 
     productAuthor.reputation += 100;
     productAuthor.totalSoldProducts += 1;
+    foundProduct.stock -= qty;
     await order.save();
     await productAuthor.save(); //When the user buys a product, the autor of the product gets +100 of reputation
+    await foundProduct.save() // When the user buys a product, the product stock is subtracted by the selected quantity
     console.log(productAuthor.reputation)
     console.log(order.quantity)
     res.redirect(`/order/purchased/${order._id}`)

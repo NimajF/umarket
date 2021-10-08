@@ -23,58 +23,87 @@
             <span class="text-muted"><%= foundProduct.categories %></span>
             
             <hr>
+            <input type="number" class="product[stock]" id="stock" value="<%= foundProduct.stock %>" hidden>
             
-            <% if (foundProduct.price < 200) {%> 
-            <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span><%= foundProduct.price %></span> </h3>
-            <label for="qty">Select quantity:</label>
-            <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select> 
+
+            <% if (foundProduct.stock > 0) {%>
+                <% if (foundProduct.price < 200) {%> 
+                    <span class="stock-message">In Stock.</span>
+                    <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span><%= foundProduct.price %></span> </h3>
+                    <label for="qty">Select quantity:</label>
+                    <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select> 
+                    <% } else {%>
+                    <span class="stock-message">In Stock.</span>    
+                    <h3 class="mb-3 productPrice" style="color: rgb(127, 255, 212);">$ <span id="price"><%= foundProduct.price %></span></h3>
+                    <label for="qty">Select quantity:</label> 
+                    <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <!-- Here I could have used EJS and a for loop to display qty 1 to 10 instead of hardcoding, but there are 10 posible values and are not too much -->    
+                
+                    <% } %>     
+            
             <% } else {%>
-            <h3 class="mb-3 productPrice" style="color: rgb(127, 255, 212);">$ <span id="price"><%= foundProduct.price %></span></h3>
-            <label for="qty">Select quantity:</label> 
-            <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            <!-- Here I could have used EJS and a for loop to display qty 1 to 10 instead of hardcoding, but there are 10 posible values and are not too much -->
-            <% } %>
+                <span class="no-stock">Currently unavailable</span> 
+            <% } %> 
             <div class="desc">
-                <h5>Product description</h4>
+                <h5 class="mt-3">Product description</h4>
                 <p class="mb-4"><%= foundProduct.description %></p>
             </div>
-            <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
-                <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
-                <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
-                <input type="hidden" class="encodedPriceForm" name="product[price]" value="<%= foundProduct.price %>">
-                <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
-                <input type="hidden" class="encodedQty" name="product[qty]" value="<%= foundProduct.author._id %>">
-                <button class="btn btn-success mb-3 btnBuy">Buy</button>
-            </form>
-            <form action="/cart">
-                <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
-                <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
-                <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
-                <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
-                <button class="btn btn-warning">Add to cart</button>
-            </form>
+            <% if (!currentUser) {%>
+                <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
+                    <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                    <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                    <input type="hidden" class="encodedPriceForm" name="product[price]" value="<%= foundProduct.price %>">
+                    <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
+                    <input type="hidden" class="encodedQty" name="product[qty]" value="">
+                    <button class="btn btn-success mb-3 btnBuy">Buy</button>
+                </form>
+                <form action="/cart">
+                    <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                    <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                    <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                    <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
+                    <button class="btn btn-warning btnCart">Add to cart</button>
+                </form>
+            <% } else if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
+                <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
+                    <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                    <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                    <input type="hidden" class="encodedPriceForm" name="product[price]" value="<%= foundProduct.price %>">
+                    <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
+                    <input type="hidden" class="encodedQty" name="product[qty]" value="">
+                    <button class="btn btn-success mb-3 btnBuy">Buy</button>
+                </form>
+                <form action="#">
+                    <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
+                    <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
+                    <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
+                    <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
+                    <button class="btn btn-warning btnCart">Add to cart</button>
+                </form>
+            <% } %>     
+            <!-- To prevent the product author buying his own product -->
         </div> 
     </div>
     <% if (currentUser) {%>

@@ -29,6 +29,7 @@ const seedDB = async () => {
             title: productNames[ran],
             price: price,
             categories: 'Technology',
+            stock: 5, // By default I set the stock to 5 
             author: '6154829e501783aeae6bedd6',
             images: [
                 {
