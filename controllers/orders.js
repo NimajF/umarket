@@ -3,6 +3,7 @@ const User = require('../models/users');
 const Cart = require('../models/cart');
 const Product = require('../models/products');
 const Order = require('../models/order');
+const Notification = require('../models/notifications')
 
 const Day = require('../public/javascripts/weekday');
 
@@ -33,9 +34,15 @@ module.exports.purchaseProduct = async (req, res) => {
         address: address,
         name: name
     })
+    const notification = new Notification({
+        title: `${order.orderUser} bought your product!`,
+        product: foundProduct
+    })
 
     productAuthor.reputation += 100;
     productAuthor.totalSoldProducts += 1;
+    productAuthor.notifications.push(notification);
+
     foundProduct.stock -= qty;
     await order.save();
     await productAuthor.save(); //When the user buys a product, the autor of the product gets +100 of reputation

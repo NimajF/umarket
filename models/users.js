@@ -1,4 +1,3 @@
-const { number } = require('joi');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
@@ -11,6 +10,7 @@ const UserSchema = new Schema({
     },
     reputation: { type: Number, default: 0 },
     totalSoldProducts: { type: Number, default: 0 },
+    notifications: [{type: Schema.Types.ObjectId, ref: 'User'}],
     cart: {
         items: [{
             productId: {
@@ -27,5 +27,5 @@ const UserSchema = new Schema({
     }
 })
 
-UserSchema.plugin(passportLocalMongoose);// ads username and password, and unique
+UserSchema.plugin(passportLocalMongoose);// adds username and password, and unique
 module.exports = mongoose.model('User', UserSchema);

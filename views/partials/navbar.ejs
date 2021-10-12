@@ -29,6 +29,10 @@
         <div class="navbar-nav ms-auto d-flex justify-content-end align-items-end links">
           <% if (currentUser) {%>
             <a class="nav-link me-2 usr" href="/products/newProduct"><b><i class="bi bi-tags b"></i></b> Sell</a>
+            <div class="bell">
+              <a class="nav-link me-2 usr bell" href="#"><i class="bi bi-bell"></i></a>
+              <span class="bell-notification">5</span>
+            </div>
             <a class="nav-link me-2 usr" href="/profile/<%=currentUser._id%> "><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
             <a class="nav-link me-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>
             <a class="nav-link" href="/logout">Log out</a>

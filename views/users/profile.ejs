@@ -28,6 +28,7 @@
                     <% } else {%>     
                     <p><%= foundUser.totalSoldProducts %> products sold</p>
                     <% } %>
+                    <a href="#">Notifications</a>
                     <a href="#">Settings</a>
                     <a href="/logout">Log out</a> 
                 <% } %>  
@@ -52,7 +53,7 @@
                                 <a href="/products/<%=p._id%>/show"><%= p.title %> </a>
                             <% } %> 
                         <% } else {%>
-                            <p style="font-size: 1rem;">No products for sale</p>
+                            <p style="font-size: 1rem;">No products for sale.</p>
                         <% } %>
                     </div>
                 </div>       

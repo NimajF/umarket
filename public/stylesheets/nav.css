@@ -57,14 +57,35 @@
     border-bottom: 2px solid transparent;
 }
 .usr:hover{
+    color: rgb(127, 255, 212);
     border-bottom: 2px solid rgb(127, 255, 212);
 }
-
+.usr:hover i{
+    color: rgb(127, 255, 212);
+}
+.bell-notification{
+    position: absolute;
+    right: 184px;
+    top: 15px;
+    z-index: 1;
+    background: #fb1c03;
+    border-radius: 50%;
+    padding-top: 5px;
+    height: 19px;
+    width: 19px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 10px;
+    color: #FFF;
+}
 .cart{
     transition: .5s ease;
     border-bottom: 2px solid transparent;
 }
 .cart:hover{
+    color: rgb(127, 255, 212);
     border-bottom: 2px solid rgb(127, 255, 212);
 }
 

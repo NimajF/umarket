@@ -29,7 +29,7 @@
             <% if (foundProduct.stock > 0) {%>
                 <% if (foundProduct.price < 200) {%> 
                     <span class="stock-message">In Stock.</span>
-                    <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span><%= foundProduct.price %></span> </h3>
+                    <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span id="price"><%= foundProduct.price %></span> </h3>
                     <label for="qty">Select quantity:</label>
                     <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
                         <option value="1">1</option>
@@ -157,3 +157,4 @@
     </div>
        
 </section>
+<script src="/javascripts/productQuantity.js"></script>

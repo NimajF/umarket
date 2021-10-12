@@ -30,7 +30,7 @@ const seedDB = async () => {
             price: price,
             categories: 'Technology',
             stock: 5, // By default I set the stock to 5 
-            author: '6154829e501783aeae6bedd6',
+            author: '6164cd179eaefaf833614fe4',
             images: [
                 {
                     url: 'https://res.cloudinary.com/dsscydgze/image/upload/v1631403556/Umarket/photo-1573376671570-bc0e9aab13a1_rfnxiv.jpg',
