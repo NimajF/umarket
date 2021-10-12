@@ -12,25 +12,26 @@
 .congratsDiv{
     width: 30rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background-color: azure;
+    border-radius: 5px;
+    background-color: rgb(240, 255, 255);
+    transition: 1s ease-in;
 }
+
 .congratsDiv h1{
     font-size: 2em;
 }
 
+.btnDetails:focus{
+    outline: none;
+    box-shadow: none;
+}
 
 .purchaseDetails{
     background-color: rgb(220, 220, 220);
     border: 1px solid rgb(200, 200, 200);
     border-radius: 5px;
 }
-.purchaseDetails.transition{
-    -webkit-transition: 3s;
-    -moz-transition: 3s;
-    -ms-transition: 3s;
-    -o-transition: 3s;
-    transition: 3s;
-}
+
 .purchaseDetails h2{
     font-size: 1.2em;
 }
