@@ -9,6 +9,9 @@
 
 .navbar-brand{
     transition: .3s ease-in-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
 }
 .navbar-brand:hover{
     transform: translateY(1px) scale(1.1);
