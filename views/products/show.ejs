@@ -30,7 +30,7 @@
                 <% if (foundProduct.price < 200) {%> 
                     <span class="stock-message">In Stock.</span>
                     <h3 class="pe-3 productPrice"><b>On sale!</b>$ <span id="price"><%= foundProduct.price %></span> </h3>
-                    <label for="qty">Select quantity:</label>
+                    <label for="qty" class="qty-label">Select quantity:</label>
                     <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -46,7 +46,7 @@
                     <% } else {%>
                     <span class="stock-message">In Stock.</span>    
                     <h3 class="mb-3 productPrice" style="color: rgb(127, 255, 212);">$ <span id="price"><%= foundProduct.price %></span></h3>
-                    <label for="qty">Select quantity:</label> 
+                    <label for="qty" class="qty-label">Select quantity:</label> 
                     <select class="form-control mb-3 selectQty" name="user[quantity]" id="qty">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -87,6 +87,7 @@
                     <button class="btn btn-warning btnCart">Add to cart</button>
                 </form>
             <% } else if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
+                The HyperX Alloy FPS Pro is for the FPS gamer who wants a reliable, accurate tenkeyless (TKL) keyboard to maximize their desktop space.
                 <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
                     <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
                     <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
@@ -102,6 +103,15 @@
                     <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
                     <button class="btn btn-warning btnCart">Add to cart</button>
                 </form>
+            <% } else {%>
+                <script>
+                    const qtyOption = document.querySelector('.selectQty');
+                    const stockStatus = document.querySelector('.stock-message');
+                    const qtyLabel = document.querySelector('.qty-label');
+                    qtyOption.setAttribute('hidden', 'hidden');
+                    stock.setAttribute('hidden', 'hidden');
+                    qtyLabel.setAttribute('hidden', 'hidden');
+                </script>
             <% } %>     
             <!-- To prevent the product author buying his own product -->
         </div> 

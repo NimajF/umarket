@@ -15,8 +15,9 @@ if (stock.value < 1){
 
 let intPrice = parseInt(price.innerHTML);
 qty.addEventListener('change', getQty)
-encodedQty.setAttribute('value', `${1}`) //By default quantity is 1 (1 product).
+//By default quantity is 1 (1 product).
 function getQty(){
+    encodedQty.setAttribute('value', `${1}`) 
     let selectedQty = qty.value;
     console.log(selectedQty)
     if (selectedQty <= stock.value && selectedQty != 10){ // If the selected quantity is less or equal to stock, show available stock and BUY button
