@@ -1,4 +1,5 @@
 footer{
+    position: absolute;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     margin-top: 10rem;
@@ -19,6 +20,7 @@ footer{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    /* Avoid blurry transitions */
 }
 
 .footer-a{

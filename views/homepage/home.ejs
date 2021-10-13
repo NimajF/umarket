@@ -52,11 +52,11 @@
             <img src=" <%= c.images[0].url %>" class="card-img-top" alt="">
           </div>
           <div class="card-body">
-            <h5 class="card-title" style="font-family: 'Poppins', sans-serif;"><%= c.title %> </h5>
+            <h5 class="card-title"><%= c.title %> </h5>
             <% if (c.price < 200) {%>
               <p class="card-text text-muted"><b>On sale!</b> $<%= c.price %> </p> 
             <% }else {%>
-              <p class="card-text anim" style="color: rgb(127, 255, 212); font-weight: bold;"> $<%= c.price %> </p> 
+              <p class="card-text anim"> $<%= c.price %> </p> 
             <% } %> 
               <a href="/products/<%= c._id %>/show" class="btn btnAnim" id="about">About</a>
             </div>

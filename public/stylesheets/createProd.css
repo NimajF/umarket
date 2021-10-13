@@ -1,5 +1,5 @@
 body{
-    height: 100vh;
+    min-height: 100vh;
     
 }
 
@@ -9,12 +9,15 @@ body{
 }
 
 .secCreateForm{
-    height: 20vw;
     padding: 3rem;
     padding-left: 15rem;
     padding-right: 15rem;
     border-radius: 20px;
     
+}
+.div-create{
+    position: relative;
+    margin-bottom: 10rem;
 }
 /* 
 .accordion-item{
