@@ -86,12 +86,12 @@ body{
 } 
 
 .btnBuy{
-    background-color: rgb(127, 255, 212);
+    background-color: rgb(36, 231, 166);
     border-color: transparent;
     color: #000;
 }
 .btnBuy:hover{
-    background-color: rgb(101, 216, 177);
+    background-color: rgb(30, 153, 112);
     border-color: transparent;
     color: #000;
 }

@@ -116,7 +116,7 @@
             <!-- To prevent the product author buying his own product -->
         </div> 
     </div>
-    <% if (currentUser) {%>
+    <% if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
         <div class="reviewDiv">
             <form action="/products/<%=foundProduct._id%>/reviews" method="POST" class="validated-form" novalidate>
                 <p style="font-size: 1.5rem;">Leave a review</p>
@@ -135,6 +135,8 @@
                 <button class="btn align-self-center btnReview">Submit review</button>
             </form>
         </div>
+    <% } else if (currentUser && foundProduct.author._id.equals(currentUser._id)){%>
+        <span>You can't post a review about your product</span>
     <% } else {%>
         <p class="logReview mt-3">Log in to leave a review</p>
         <a href="/login" class="btn btn-secondary">Log in</a>
