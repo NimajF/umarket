@@ -22,11 +22,22 @@ body{
 section{
     height: 50vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all .5s linear; 
 }
-
+h1{
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgb(37, 37, 37);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+h1 span{
+    color: aquamarine;
+    text-shadow: .5px .5px 10px aquamarine;
+}
 .login{
     background-color: rgb(255, 255, 255);
     width: 20rem;
@@ -34,9 +45,17 @@ section{
     /* transition: all .5s linear;  */
 }
 
+.div-buttons span, a{
+    text-align: center;
+    text-decoration: none;
+}
+
 .btn{
     background-color: aquamarine;
-    transition: .5s ease-in-out;
+    transition: .2s ease-in-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
 }
 .btn:hover{
     background-color: rgb(102, 228, 186);
@@ -52,14 +71,44 @@ section{
     box-shadow: none;
     }
 
-    @media screen and (max-width: 992px) {
+.div-buttons a{
+    display: block;
+    transition: .1s ease-in-out;
+    
+}
+.div-buttons a:hover{
+    color: rgb(16, 143, 246);
+    transform: translateY(-1px);
+    text-decoration: underline;
+}    
+
+    @media screen and (max-width: 1024px) {
         section{
-            margin-top: 5rem;
+            margin-top: 10rem;
             height: 50%;
            
         }
-        .btn{
-            padding: 0.5rem;
-            font-size: 1.5rem;
+        h1{
+            font-size: 4rem;
+            margin-top: 7rem;
+            
         }
-      }    
+        .btn{
+            font-size: 1rem;
+        }
+      }        
+@media screen and (max-width: 992px) {
+    section{
+        margin-top: 10rem;
+        height: 50%;
+       
+    }
+    h1{
+        font-size: 4rem;
+        margin-top: 7rem;
+        
+    }
+    .btn{
+        font-size: 1rem;
+    }
+  }    
