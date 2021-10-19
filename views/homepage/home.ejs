@@ -44,26 +44,48 @@
       </div>
       
     </div>
-    <h2 class="indexProducts">Trending Products</h2>
-    <div class="trend">
-      <% for (let c of products) {%>
-        
-        <div class="card cardAnim">
-          <div class="image">
-            <img src=" <%= c.images[0].url %>" class="card-img-top" alt="">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= c.title %> </h5>
-            <% if (c.price < 200) {%>
-              <p class="card-text text-muted"><b>On sale!</b> $<%= c.price %> </p> 
-            <% }else {%>
-              <p class="card-text anim"> $<%= c.price %> </p> 
-            <% } %> 
-              <a href="/products/<%= c._id %>/show" class="btn btnAnim" id="about">About</a>
+    <div class="home-products">
+      <h2 class="titles">Trending Products</h2>
+      <div class="trend">
+        <% for (let c of products) {%>
+          
+          <div class="card cardAnim">
+            <div class="image">
+              <img src=" <%= c.images[0].url %>" class="card-img-top" alt="">
             </div>
-          </div> 
-      <% } %> 
+            <div class="card-body">
+              <h5 class="card-title"><%= c.title %> </h5>
+              <% if (c.price < 200) {%>
+                <p class="card-text text-muted"><b>On sale!</b> $<%= c.price %> </p> 
+              <% }else {%>
+                <p class="card-text anim"> $<%= c.price %> </p> 
+              <% } %> 
+                <a href="/products/<%= c._id %>/show" class="btn btnAnim" id="about">About</a>
+              </div>
+            </div> 
+        <% } %> 
+      </div>
+      <h3 class="titles">Discover</h3>
+      <div class="discovery mb-5">
+        <div class="p-3">
+          <div class="discovery-card tech">
+            <span class="technology-title">Technology</span>
+            <p class="description" >The latest technology</p>
+            <span class="description" >The best price</span>
+            <a href="/products/Technology" class="technology-button">Discover</a>
+          </div>
+        </div>
+        <div class="p-3">
+          <div class="discovery-card cloth">
+            <span class="technology-title">Clothing</span>
+            <p class="description" >Best brands awaiting</p>
+            <span class="description" >Have the look of your dreams</span>
+            <a href="/products/Clothing" class="technology-button">Discover</a>
+          </div>
+        </div>
+      </div>
     </div>
+
     <%-include('../partials/footer')%>
 
     

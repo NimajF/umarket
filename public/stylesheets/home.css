@@ -14,7 +14,7 @@ input[type="search" i] {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-      
+    margin-bottom: 6rem;  
     
 }
 .mainCar{
@@ -62,21 +62,29 @@ input[type="search" i] {
     background-size: cover;
     border-left: 1px solid rgb(0, 0, 0);
 }
-
-.indexProducts{
-    margin-top: 5rem;
-    font-size: 30px;
-    /* margin-left: 2rem; */
-    text-align: center;
-    
+.home-products{
+    background-color: rgb(127, 255, 212);
+    -webkit-box-shadow: 0px 30px 30px 5px #08dbf6; 
+    box-shadow: 0px 10px 30px 5px #12ffc4;
 }
+.titles{
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-left: 3rem;
+    padding-top: 4rem;
+    /* margin-left: 2rem; */
+}
+
 .trend{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    margin-bottom: 10rem;
+    width: 100%;
+    padding-top: 1rem; padding-bottom: 3rem;
+    gap: 1.5rem;
+    justify-content: center;
     /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 4rem; */
     
 }
@@ -152,16 +160,87 @@ input[type="search" i] {
     outline: none;
     box-shadow: none;
 } */
+
+.discovery{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+.discovery-card{
+    width: 30rem;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+    /* https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 2rem;
+    transition: .2s linear;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    
+}
+.discovery-card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 40px rgba(0,0,0,0.22);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.cloth{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/photo-1556048219-bb6978360b84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+    background-size: cover;
+    background-position: center;
+}
+.cloth:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1556048219-bb6978360b84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+}
+
+.technology-title{
+    color: white;
+    font-size: 2.5rem;
+    text-shadow:  0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+.description{
+    color: white;
+    font-size: 1.3rem;
+    margin-right: 100px;
+    text-shadow:  0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+.technology-button{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(44, 44, 44);
+    align-self: flex-end;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: .2s ease-in-out;
+}
+.technology-button:hover{
+    box-shadow: 0 1px 10px rgba(0,0,0,0.20), 0 1px 10px rgba(0,0,0,0.20);
+    background-color: rgb(127, 255, 212);
+    color: rgb(255, 255, 255);
+    text-shadow:  0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (max-width: 1400px) {
     .welcome{
         width: 50%;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        
-        
+   
     }
     .welcome p h1{
         font-size: 1rem;
@@ -172,6 +251,10 @@ input[type="search" i] {
         align-self: center;
         padding-top: 2rem;
         margin-left: 1rem;
+    }
+
+    .trend{
+        padding-right: 1rem; padding-left: 2rem;
     }
 }
 @media screen and (max-width: 992px) {
@@ -197,6 +280,11 @@ input[type="search" i] {
         align-items: center;
         transition: all .5s linear; 
         
+    }
+    .discovery{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .card{
         margin-bottom: 10px;
