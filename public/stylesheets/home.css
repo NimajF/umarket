@@ -62,11 +62,11 @@ input[type="search" i] {
     background-size: cover;
     border-left: 1px solid rgb(0, 0, 0);
 }
-.home-products{
+/* .home-products{
     background-color: rgb(127, 255, 212);
     -webkit-box-shadow: 0px 30px 30px 5px #08dbf6; 
     box-shadow: 0px 10px 30px 5px #12ffc4;
-}
+} */
 .titles{
     font-size: 30px;
     font-family: sans-serif;
