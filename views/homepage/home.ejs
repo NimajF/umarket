@@ -46,7 +46,7 @@
     </div>
     <div class="home-products">
       <h2 class="titles">Trending Products</h2>
-      <div class="trend">
+      <section class="trend">
         <% for (let c of products) {%>
           
           <div class="card cardAnim">
@@ -64,9 +64,9 @@
               </div>
             </div> 
         <% } %> 
-      </div>
+      </section>
       <h3 class="titles">Discover</h3>
-      <div class="discovery mb-5">
+      <section class="discovery">
         <div class="p-3">
           <div class="discovery-card tech">
             <span class="technology-title">Technology</span>
@@ -83,7 +83,25 @@
             <a href="/products/Clothing" class="technology-button">Discover</a>
           </div>
         </div>
-      </div>
+      </section>
+      <h3 class="titles">Popular categories</h3>
+      <section class="categories mb-5">
+        <div class="categories-div">
+          <a class="category-card" href="">
+            <i class="bi bi-display"></i>
+            <p id="category-title">Technology</p>
+          </a>
+          <a class="category-card" href="">
+            <i class="bi bi-speaker"></i>
+            <p id="category-title">Music and instruments</p>
+          </a>
+          <a class="category-card" href="">
+            <i class="bi bi-eyeglasses"></i>
+            <p id="category-title">Clothes and accessories</p>
+          </a>
+          
+        </div>
+      </section>
     </div>
 
     <%-include('../partials/footer')%>
