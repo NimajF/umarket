@@ -14,7 +14,7 @@ The project is commited to this repository a bit later after it was started due 
 <h2>Features</h2>
 This project has a TON of new different features implemented by me in addition to those learned in the course.<br>
 The course's final project was a "very basic" web page about Campgrounds. Just HTML, a bit of CSS and EJS, and basic CRUD.
-Also that project will be uploaded to my GitHub profile.<br>
+Also that project will be uploaded to my GitHub profile as well.<br>
 
 <b>Coming soon features:</b><br>
 - Shopping cart to quickly add or remove products.
@@ -22,5 +22,6 @@ Also that project will be uploaded to my GitHub profile.<br>
 - Media queries (to all pages).
 - More product categories and sub-categories.
 - Working footer links.
+- Premium membership (you can still select premium shipping).
 
 Remember this is my first huge project and some things could be bad implemented or some bugs can appear.
