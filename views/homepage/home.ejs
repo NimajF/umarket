@@ -51,7 +51,7 @@
           
           <div class="card cardAnim">
             <div class="image">
-              <img src=" <%= c.images[0].url %>" class="card-img-top" alt="">
+              <img src="<%= c.images[0].url %>" class="card-img-top" alt="">
             </div>
             <div class="card-body">
               <h5 class="card-title"><%= c.title %> </h5>
@@ -87,15 +87,15 @@
       <h3 class="titles">Popular categories</h3>
       <section class="categories home-section mb-5">
         <div class="categories-div">
-          <a class="category-card" href="">
+          <a class="category-card" href="/products/Technology">
             <i class="bi bi-display"></i>
             <p id="category-title">Technology</p>
           </a>
-          <a class="category-card" href="">
+          <a class="category-card" href="/products/Music">
             <i class="bi bi-speaker"></i>
             <p id="category-title">Music and instruments</p>
           </a>
-          <a class="category-card" href="">
+          <a class="category-card" href="/products/Clothing">
             <i class="bi bi-eyeglasses"></i>
             <p id="category-title">Clothes and accessories</p>
           </a>
