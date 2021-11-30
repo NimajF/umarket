@@ -49,6 +49,12 @@ module.exports.renderEditForm = async (req, res) => {
     res.render('products/edit', { foundProduct, categories });
 }
 
+module.exports.updateProduct = async (req, res) => {
+    const { id } = req.params;
+    const updateProduct = await Product.findByIdAndUpdate(id, {...req.body.product}) // destructuring req.body (object)
+    res.redirect(`/products/${updateProduct._id}/show`)
+}
+
 module.exports.deleteProduct = async (req, res) => {
     const { id } = req.params;
     await Product.findOneAndDelete(id);

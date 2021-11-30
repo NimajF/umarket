@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const catchAsync = require('../utilities/catchAsync')
-const { isLoggedIn, validateProduct } = require('../middleware')
+const { isLoggedIn, validateProduct, isProductAuthor } = require('../middleware')
 
 const Product = require('../models/products');
 const products = require('../controllers/products');
@@ -33,11 +33,10 @@ router.get('/:categoryName', catchAsync(products.showCategoryProducts));
 
 router.route('/:id/show')
     .get(catchAsync(products.showProduct))
-    .delete(catchAsync(products.deleteProduct))
-
+    .put(isLoggedIn, isProductAuthor, catchAsync(products.updateProduct))
+    .delete( isLoggedIn, isProductAuthor, catchAsync(products.deleteProduct))
 
 router.route('/:id/edit')
-    .get(catchAsync(products.renderEditForm))
-    
+    .get(isLoggedIn, isProductAuthor, catchAsync(products.renderEditForm))
 
 module.exports = router;
