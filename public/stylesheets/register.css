@@ -13,7 +13,7 @@ header{
    
 }
 section{
-    height: 27rem;
+    height: 28rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -37,6 +37,10 @@ h1{
 }
 h2{
     font-size: 1.5rem;
+}
+.ps{
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 span{
     color: rgb(75, 255, 195);
@@ -73,9 +77,36 @@ span{
     box-shadow: none;
 }
 
-@media screen and (max-width: 992px) {
+
+.to-login{
+    display: block;
+    transition: .1s ease-in-out;
+    text-decoration: none;
+}
+.to-login:hover{
+        color: rgb(16, 143, 246);
+        transform: translateY(-1px);
+        text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1024px){
+    header{
+        height: 100%;
+    }
     section{
         height: 30rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    header{
+        height: 100%;
+        justify-content: center;
+        align-self: center;
+    }
+    section{
+        height: 48rem;
+        width: 20rem;
         margin-top: 15rem;
         display: flex;
         flex-direction: column;
