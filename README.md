@@ -23,5 +23,6 @@ Also that project will be uploaded to my GitHub profile as well.<br>
 - More product categories and sub-categories.
 - Working footer links.
 - Premium membership (you can still select premium shipping).
+- Product Images Magnifier.
 
 Remember this is my first huge project and some things could be bad implemented or some bugs can appear.
