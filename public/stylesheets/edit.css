@@ -1,0 +1,7 @@
+.stock-price{
+    display: flex;
+    flex-direction: column;
+}
+.stock-price input{
+    width: 30%;
+}
