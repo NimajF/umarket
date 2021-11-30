@@ -16,7 +16,16 @@
             </div>    
             </div>
         <div class="prodInfo">
-            <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2>
+            <% if (currentUser && foundProduct.author._id.equals(currentUser._id)) {%>
+                <div class="edit-product">
+                    <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2> 
+                    <a href="/products/<%= foundProduct._id%>/edit"><i class="bi bi-pencil-square mt-4"> Edit product</i></a>
+                </div>
+                
+            <% } else {%>
+                <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2> 
+            <% } %> 
+                
             <p class="mb-1">By <a href="/profile/<%= foundProduct.author._id %>"><%= foundProduct.author.username %></a></p>
             <p><%= foundProduct.author.reputation %> U-Points</p>
             <br>

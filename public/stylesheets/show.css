@@ -87,6 +87,22 @@ body{
 
 } 
 
+.edit-product{
+    display: flex;
+    align-items: center;
+}
+.edit-product a{
+    text-decoration: none;
+}
+.edit-product i{
+    font-style: normal;
+    font-size: .9rem;
+    margin-left: 10px;
+}
+.edit-product a:hover i{
+    color: rgb(30, 195, 140);
+}
+
 .btnBuy{
     background-color: rgb(36, 231, 166);
     border-color: transparent;
