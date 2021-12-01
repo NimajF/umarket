@@ -21,7 +21,7 @@
                 
             </ul>
           </li>
-          <form class="d-flex">
+          <form class="d-flex search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
           </form>
@@ -29,15 +29,15 @@
         <div class="navbar-nav ms-auto d-flex justify-content-end align-items-end links">
           <% if (currentUser) {%>
             <a class="nav-link me-2 usr" href="/products/newProduct"><b><i class="bi bi-tags b"></i></b> Sell</a>
-            <div class="bell">
+            <!-- <div class="bell">
               <a class="nav-link me-2 usr bell" href="#"><i class="bi bi-bell"></i></a>
-              <span class="bell-notification">5</span>
-            </div>
+              <span class="bell-notification">5</span> 
+            </div> -->
             <a class="nav-link me-2 usr" href="/profile/<%=currentUser._id%>"><i class="bi bi-person b"></i></i> <%= currentUser.username %></a>
             <a class="nav-link me-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>
             <a class="nav-link" href="/logout">Log out</a>
             <% } else {%>
-            <a class="nav-link me-2 ms-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>   
+            <a class="nav-link me-2 cart" href="#"><i class="bi bi-cart3 b"></i></a>   
             <a class="nav-link me-2" href="/login">Log in</a>
             <a class="nav-link" href="/register">Sign up</a> 
             <%}%>   

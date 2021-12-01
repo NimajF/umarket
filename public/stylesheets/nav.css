@@ -7,6 +7,7 @@
     transition: all 0.3s;
 }
 
+
 .navbar-brand{
     transition: .3s ease-in-out;
     backface-visibility: hidden;
@@ -42,33 +43,40 @@
     border: 1px solid transparent;
 }
 .drop .nav-link:hover{
-    border: 1px solid aquamarine;
+    border: 1px solid rgb(127, 255, 212);
     border-radius: 6px;
 }
 
-.nav-link{
+
+
+.links .nav-link{
+    width: 4.5rem;
+    text-align: center;
+    border-top-right-radius: 3px; border-top-left-radius: 3px;
     transition: .5s ease;
     border-bottom: 2px solid transparent;
+    background-color: rgb(250, 250, 250);
 }
-.nav-link:hover{
-    border-radius: 2px;
+.links .nav-link:hover{
+    border-top-right-radius: 2px; border-top-left-radius: 2px;
     border-bottom: 2px solid rgb(204, 203, 203);
+    background-color: rgb(248, 248, 248);
 }
 
-.usr{
+.links .usr{
     transition: .5s ease;
     border-bottom: 2px solid transparent;
 }
-.usr:hover{
+.links .usr:hover{
     color: rgb(127, 255, 212);
     border-bottom: 2px solid rgb(127, 255, 212);
 }
 .usr:hover i{
     color: rgb(127, 255, 212);
 }
-.bell-notification{
+/* .bell-notification{
     position: absolute;
-    right: 184px;
+    right: 184px;cc
     top: 15px;
     z-index: 1;
     background: #fb1c03;
@@ -82,12 +90,12 @@
     font-weight: 700;
     line-height: 10px;
     color: #FFF;
-}
-.cart{
+} */
+.links .cart{
     transition: .5s ease;
     border-bottom: 2px solid transparent;
 }
-.cart:hover{
+.links .cart:hover{
     color: rgb(127, 255, 212);
     border-bottom: 2px solid rgb(127, 255, 212);
 }
@@ -95,3 +103,48 @@
 /* .b:hover{
     color: rgb(127, 255, 212);
 } */
+
+@media screen and (max-width: 976px) {
+    #navbarSupportedContent{
+        width: 100%;
+        border-bottom: 2px solid aquamarine;
+    }
+    .drop .nav-link {
+        margin: 1rem 0px 1rem 10px;
+        border: 1px solid transparent;
+    }
+    .drop .nav-link:hover{
+        border: 1px solid transparent;
+        background-color: rgb(247, 247, 247);
+    }
+    .drop{
+        margin-left: 10px;
+        align-self: center;
+        width: 50%;
+    }
+    .search{
+        width: 30rem;
+        margin-left: 10px;
+    }
+    .links .nav-link{
+        align-self: flex-start;
+        width: 100%;
+        text-align: start;
+        padding: 10px;
+    }
+    .links .nav-link:hover{
+        border-bottom: 2px solid transparent;
+        background-color: rgb(247, 247, 247);
+    }
+    
+    .links .usr{
+        transition: .5s ease;
+        border-bottom: 2px solid transparent;
+    }
+    .links .usr:hover{
+        border-bottom: 2px solid transparent;
+    }
+    .usr:hover i{
+        color: rgb(127, 255, 212);
+    }
+  }
