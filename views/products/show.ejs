@@ -96,7 +96,6 @@
                     <button class="btn btn-warning btnCart">Add to cart</button>
                 </form>
             <% } else if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
-                The HyperX Alloy FPS Pro is for the FPS gamer who wants a reliable, accurate tenkeyless (TKL) keyboard to maximize their desktop space.
                 <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
                     <input type="hidden" name="product[id]" value="<%= foundProduct._id %>">
                     <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
