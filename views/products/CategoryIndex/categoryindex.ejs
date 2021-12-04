@@ -1,31 +1,61 @@
 <% layout('layouts/boilerplate')%>
-<h1 class="catProducts"><%= categoryName %></h1>
+<h1 class="catProducts ms-4 mt-3"><%= categoryName %></h1>
     <section class="catIndex">
-      <div class="searchIndex">
-        <h2 class="ms-3">asdsad</h2>
-      </div>
-      <div class="me-4 allProducts">
+      <% if (products.length === 0) {%>
+        <h2>Sorry! No products available at the moment.</h2>
+      <% } else {%> 
+        <div class="searchIndex">
+          <h3 class="ms-3">Search options</h3>
+          <div class="customer-review mb-3 mt-3">
+            <span>Customer review</span>
+            <div class="stars">
+              <label for="customer-review"><i class="bi bi-star-fill"></i></label>
+              <select name="stars-review" id="customer-review">
+                <div class="stars-options">
+                  <option value="1">1 star & up</option>
+                  <option value="2">2 stars & up</option>
+                  <option value="3">3 stars & up</option>
+                  <option value="4">4 stars & up</option>
+                </div>
+              </select>
+            </div>
+          </div>
+          <div class="price-options">
+            <span>Price</span>
+            <div class="price">
+              <ul>
+                <li><a href="#">Under 10$</a></li>
+                <li><a href="#">15$ to 25$</a></li>
+                <li><a href="#">25$ to 50$</a></li>
+                <li><a href="#">50$ to 100$</a></li>
+                <li><a href="#">100$ & above</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="me-4 allProducts">
+          
         <% for (let p of products) {%>
           <a href="/products/<%= p._id %>/show">
-            <div class="card ms-4">
-            
-              
+            <div class="card cards2 ms-4">
               <div class="image">
                 <img src="<%= p.images[0].url %> " alt="">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><%= p.title %> </h5>
+                <span id="product-rating"></span>
                 <% if (p.price < 200) {%>
-                  <p class="card-text text-muted"><b>On sale!</b> $<%= p.price %> </p> 
+                  <span class="card-text card-price"><b>On sale!</b> $<%= p.price %> </span> 
                 <% }else {%>
-                  <p class="card-text text-muted"> $<%= p.price %> </p> 
-                  <p class="card-text"><%= p.description %> </p> 
+                  <span class="card-text card-price"> $<%= p.price %> </span> 
+                  <p class="card-text card-description"><%= p.description %> </p> 
                 <% } %> 
               </div>
               
             </div>
           </a>
-          <hr class="ms-3">   
-      <% } %> 
+          <hr class="ms-3">
+        <% } %>
+      <% } %>     
       </div>
     </section>
