@@ -66,6 +66,10 @@
 .links .usr{
     transition: .5s ease;
     border-bottom: 2px solid transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
 }
 .links .usr:hover{
     color: rgb(127, 255, 212);
