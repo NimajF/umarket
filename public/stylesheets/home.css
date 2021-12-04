@@ -119,6 +119,12 @@ input[type="search" i] {
 .cardAnim #about{
     visibility: hidden;
 }
+.cardAnim h5{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 .cardAnim p{
     visibility: hidden;
 }
