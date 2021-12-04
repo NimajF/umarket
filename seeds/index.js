@@ -36,7 +36,8 @@ const seedDB = async () => {
                     url: 'https://res.cloudinary.com/dsscydgze/image/upload/v1631403556/Umarket/photo-1573376671570-bc0e9aab13a1_rfnxiv.jpg',
                     
                 }
-            ]
+            ],
+            description: 'Umarket originals.'
     })
     await product.save();
     }
