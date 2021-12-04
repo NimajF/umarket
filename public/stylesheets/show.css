@@ -62,6 +62,14 @@ body{
 
 .prodH1{
     align-self: flex-end;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 70%; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .prodInfo{
@@ -81,6 +89,9 @@ body{
     color: rgb(180, 39, 4);
 }
 
+.product-description .productDescription{
+    overflow: auto;
+}
 
 .prodInfo #qty{
     width: 2.8rem;

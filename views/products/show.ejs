@@ -23,7 +23,10 @@
                 </div>
                 
             <% } else {%>
-                <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2> 
+                <div class="edit-product">
+                    <h2 class="prodH1 mt-3"><%= foundProduct.title %> </h2>
+                </div>
+                 
             <% } %> 
                 
             <p class="mb-1">By <a href="/profile/<%= foundProduct.author._id %>"><%= foundProduct.author.username %></a></p>
@@ -75,9 +78,9 @@
             <% } else {%>
                 <span class="no-stock">Currently unavailable</span> 
             <% } %> 
-            <div class="desc">
+            <div class="product-description">
                 <h5 class="mt-3">Product description</h4>
-                <p class="mb-4"><%= foundProduct.description %></p>
+                <p class="mb-4 productDescription"><%= foundProduct.description %></p>
             </div>
             <% if (!currentUser) {%>
                 <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
