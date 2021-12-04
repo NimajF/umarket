@@ -16,8 +16,8 @@ module.exports.homeProducts = async (req, res)  => {
 module.exports.showCategoryProducts = async (req, res) => {
     const { categoryName } = req.params;
     const products = await Product.find({categories: categoryName})
-    res.render('products/CategoryIndex/categoryindex', { products, categoryName })
-    
+    res.render('products/CategoryIndex/categoryindex', { products, categoryName }) 
+    console.log(products)  
 };
 
 module.exports.renderCreateForm = (req, res) => {
