@@ -131,13 +131,14 @@ body{
 
 .reviewDiv{
     width: 65%;
+    /* opacity: 0;
+    height: 0; */
     border-radius: 10px;
     background-color: #fff;
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 3rem;
 }
-
 #title{
     border-radius: 5px;
     border: 1px solid #ced4da;
@@ -148,7 +149,7 @@ body{
 #body{
     border-radius: 5px;
     border-color: #ced4da;
-    
+    width: 70%;
 }
 #body:focus{
     outline: none;
@@ -175,11 +176,20 @@ body{
 .review{
     display: flex;
     flex-direction: row;
-    width: 65%;
+    width: 65rem;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12); 
 }
+.review-stars{
+    color: aquamarine;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+/* .review-text{
+    
+    
+} */
 
 .divDeleteReview{
     display: flex;
@@ -197,7 +207,7 @@ body{
 
 .reviewBody{
     padding: 1rem;
-    
+    width: 60rem;
 }
 
 
@@ -217,6 +227,13 @@ body{
         height: 300px;
     
     }
+    .review{
+        width: 25rem;
+    }
+    .review-stars{
+        font-size: 1rem;
+        
+    }
 }
 
 @media screen and (max-width: 992px){
@@ -234,9 +251,19 @@ body{
         height: 200px;
     
     }
+    .review{
+        width: 20rem;
+    }
 }
 @media screen and (max-width: 768px){
     .prodDiv{
         width: 35rem;
+    }
+    .review{
+        width: 15rem;
+    }
+    .review-stars{
+        font-size: .7rem;
+        
     }
 }

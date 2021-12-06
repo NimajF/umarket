@@ -128,7 +128,7 @@
         </div> 
     </div>
     <% if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
-        <div class="reviewDiv">
+        <div class="reviewDiv" id="review-div">
             <form action="/products/<%=foundProduct._id%>/reviews" method="POST" class="validated-form" novalidate>
                 <p style="font-size: 1.5rem;">Leave a review</p>
                 <div class="mt-4">
@@ -160,9 +160,16 @@
             <% for (let r of foundProduct.reviews) {%>
                 <div class="review mb-3">
                     <div class="reviewBody">
-                        <p>Rating: <%= r.rating %> </p>
+                        <% for (let i = 0; i < r.rating; i++) {%>
+                            <i class="bi bi-star-fill review-stars"></i>
+                            <% if (i === r.rating-1) {%>
+                                <% for (let j = r.rating; j < 5; j++) {%>
+                                    <i class="bi bi-star review-stars"></i>
+                                <% } %>     
+                            <% } %>     
+                        <% } %>     
                         <p><b><%= r.title %> </b> - By <span class="text-muted"><%= r.author.username %></span>  </p>
-                        <p class="mb-2"> <%= r.body %> </p>
+                        <p class="mb-2 review-text"> <%= r.body %> </p>
                     </div>
                     <% if (currentUser && r.author.equals(currentUser._id)) {%> 
                         <!-- If there is a user logged in, and the review author ID is equal to the current user ID, show the delete button-->
