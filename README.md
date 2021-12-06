@@ -24,5 +24,7 @@ Also that project will be uploaded to my GitHub profile as well.<br>
 - Working footer links.
 - Premium membership (you can still select premium shipping).
 - Product Images Magnifier.
+- Search filters.
+- Pagination.
 
 Remember this is my first huge project and some things could be bad implemented or some bugs can appear.
