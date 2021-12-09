@@ -8,6 +8,9 @@ const app = express();
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 
+const mongoSanitize = require('express-mongo-sanitize')
+
+const helmet = require('helmet')
 
 // const { campgroundSchema, reviewSchema } = require('./schemas.js')
 const {userSchema} = require('./schemas')
@@ -56,21 +59,24 @@ const path = require('path');
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(mongoSanitize());
 
 const sessionConfig = {
+    name: 'Session',
     secret: 'sicret',
     resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
-        // secure: true
+        // secure: true    LocalHost it is not secure, it is not HTTPS
         expires: Date.now() * 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
 app.use(session(sessionConfig));
 
+app.use(helmet({ contentSecurityPolicy: false ,frameguard: false }))
 
 app.use(passport.initialize());
 app.use(passport.session())
