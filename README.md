@@ -11,6 +11,18 @@ It is made using:
 
 The project is commited to this repository a bit later after it was started due to my lack of knowledge about GITHUB.
 
+
+<h2>Umarket screenshots</h2>
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Homepage.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Homepage2.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Login.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Register.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/ProductCategories.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/ProductPage.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Profile.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Purchase.PNG?raw=true">
+
+
 <h2>Features</h2>
 This project has a TON of new different features implemented by me in addition to those learned in the course.<br>
 The course's final project was a "very basic" web page about Campgrounds. Just HTML, a bit of CSS and EJS, and basic CRUD.
