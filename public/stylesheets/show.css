@@ -117,7 +117,7 @@ body{
 .btnBuy{
     background-color: rgb(36, 231, 166);
     border-color: transparent;
-    color: #000;
+    color: rgb(34, 34, 34);
 }
 .btnBuy:hover{
     background-color: rgb(30, 153, 112);
@@ -126,6 +126,11 @@ body{
 }
 .btnBuy:active{
     outline: transparent;
+}
+
+.btnCart{
+    background-color: rgb(253, 194, 83);
+    color: rgb(34, 34, 34);
 }
 
 

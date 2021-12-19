@@ -96,7 +96,7 @@
                     <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
                     <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
                     <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
-                    <button class="btn btn-warning btnCart">Add to cart</button>
+                    <button class="btn btn-warning mb-4 btnCart">Add to cart</button>
                 </form>
             <% } else if (currentUser && !foundProduct.author._id.equals(currentUser._id)) {%>
                 <form action="/order/purchase/<%= foundProduct._id %>" class="toPurchaseForm" method="GET">
@@ -112,7 +112,7 @@
                     <input type="hidden" name="product[title]" value="<%= foundProduct.title %>">
                     <input type="hidden" name="product[price]" value="<%= foundProduct.price %>">
                     <input type="hidden" name="user[id]" value="<%= foundProduct.author._id %>">
-                    <button class="btn btn-warning btnCart">Add to cart</button>
+                    <button class="btn btn-warning mb-4 btnCart">Add to cart</button>
                 </form>
             <% } else {%>
                 <script>
