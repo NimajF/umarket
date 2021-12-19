@@ -19,7 +19,7 @@ The project is commited to this repository a bit later after it was started due 
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Register.PNG?raw=true">
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/ProductCategories.PNG?raw=true">
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/ProductPage.PNG?raw=true">
-<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Profile.PNG?raw=true">
+<img src="https://github.com/NimajF/Umarket/blob/main/screenshots/ProfilePNG.PNG?raw=true">
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Purchase.PNG?raw=true">
 
 
