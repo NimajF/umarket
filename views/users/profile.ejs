@@ -28,9 +28,9 @@
                     <% } else {%>     
                     <p><%= foundUser.totalSoldProducts %> products sold</p>
                     <% } %>
-                    <a href="#">Notifications</a>
-                    <a href="#">Settings</a>
-                    <a href="/logout">Log out</a> 
+                    <a class="profile-a" href="#">Notifications</a>
+                    <a class="profile-a" href="#">Settings</a>
+                    <a class="profile-a" href="/logout">Log out</a> 
                 <% } %>  
                 <div id="overlay"></div>
                    
@@ -42,15 +42,17 @@
                         <p id="titles"><i class="bi bi-box-seam"></i> My orders</p>
                         <% if (foundUserOrders.length) {%>
                             <% for (u of foundUserOrders) {%>
-                                    <a href="/order/purchased/<%= u._id %> ">x<%= u.quantity %> <%= u.product.title %> </a>
+                                    <a href="/order/purchased/<%= u._id %> " class="mb-1"><span style="font-weight: bolder;">x<%= u.quantity %></span> <%= u.product.title %> </a>
                                 <% } %> 
-                        <% } %>
+                        <% } else { %>
+                            <span>Your orders will appear here.</span>
+                        <% } %>     
                     </div>
                     <div class="userProducts">
                         <p id="titles"><i class="bi bi-tags"></i> My products</p>
                         <% if (userProducts.length) {%>
                             <% for (let p of userProducts) {%> 
-                                <a href="/products/<%=p._id%>/show"><%= p.title %> </a>
+                                <a href="/products/<%=p._id%>/show" class="mb-1"><%= p.title %> </a>
                             <% } %> 
                         <% } else {%>
                             <p style="font-size: 1rem;">No products for sale.</p>
