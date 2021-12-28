@@ -13,7 +13,7 @@ header{
    
 }
 section{
-    height: 28rem;
+    height: 450px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -46,13 +46,14 @@ span{
     color: rgb(75, 255, 195);
 }
 .register{
+    padding-top: 25px;
     border-left: 1px solid gray;
     /* box-shadow: 9px 1px 37px -22px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: 9px 1px 37px -22px rgba(0,0,0,0.75) inset;
     -moz-box-shadow: 9px 1px 37px -22px rgba(0,0,0,0.75) inset; */
 }
 .details{
-    padding-top: 2.3rem;
+    padding-top: 40px;
 }
 
 .btn{
@@ -94,13 +95,10 @@ span{
     header{
         height: 100%;
     }
-    section{
-        height: 30rem;
-    }
+    
 }
 @media screen and (max-width: 992px) {
     header{
-        height: 100%;
         justify-content: center;
         align-self: center;
     }
@@ -113,9 +111,11 @@ span{
         justify-content: center;
     }
     .register{
+        padding-top: 10px;
         border-left: none;
     }
     .details{
+        padding-top: 5px;
         border-bottom: 1px solid gray;
     }
   }
