@@ -39,8 +39,10 @@ const Review = require("./models/reviews");
 
 const categories = require("./seeds/categories");
 
+const dbUrl = process.env.CLUSTER_URL || "mongodb://localhost:27017/umarket";
+
 mongoose
-  .connect("mongodb://localhost:27017/umarket", {
+  .connect(dbUrl, {
     useNewUrlParser: true,
     // useCreateIndex: true,
     useUnifiedTopology: true,
