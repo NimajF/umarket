@@ -1,140 +1,186 @@
-.catIndex{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: rgb(231, 231, 231);
-
+.catIndex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgb(231, 231, 231);
 }
-.catIndex h2{
-    font-size: 3rem;
-    color: rgb(93, 221, 178);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.searchIndex{
-    position: sticky;
-    top: 140px;
-    left: 19px;
-    height: 30rem;
-    width: 12rem;
-    margin-top: 2.5rem;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(182, 182, 182);
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.searchIndex h3{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.7rem;
-    padding: 1rem;
+.catIndex h2 {
+  font-size: 3rem;
+  color: rgb(93, 221, 178);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.customer-review{
-    align-self: center;
-    width: 80%;
-    padding: .5rem;
+.searchIndex {
+  position: sticky;
+  top: 140px;
+  left: 19px;
+  height: 500px;
+  width: 200px;
+  margin-top: 2.5rem;
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.customer-review span{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
+.searchIndex h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  padding: 1rem;
 }
-.customer-review i{
-    color: rgb(0, 202, 135);
-    text-shadow: 0 0 2px rgb(5, 224, 195);
+
+.customer-review {
+  align-self: center;
+  width: 80%;
+  padding: 0.5rem;
 }
-.customer-review select{
-    border-radius: 5px;
-    border: 1px solid rgb(104, 104, 104);
-    padding: 2px;
-    background-color: rgb(211, 211, 211);
+.customer-review span {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+}
+.customer-review i {
+  color: rgb(0, 202, 135);
+  text-shadow: 0 0 2px rgb(5, 224, 195);
+}
+.customer-review select {
+  border-radius: 5px;
+  border: 1px solid rgb(104, 104, 104);
+  padding: 2px;
+  background-color: rgb(211, 211, 211);
 }
 /* .customer-review select:active{
     color: rgb(71, 43, 43);
 } */
 
-.price-options{
-    align-self: center;
+.price-options {
+  align-self: center;
+  width: 80%;
+  padding: 0.5rem;
+}
+.price-options span {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+}
+.price-options ul {
+  list-style-type: none;
+  padding: 0;
+}
+.price-options ul a {
+  text-decoration: none;
+  color: rgb(75, 75, 75);
+}
+.price-options li {
+  transition: 0.3s linear;
+  transform: perspective(1px) scale(1) translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.price-options li:hover {
+  transform: translateX(2px);
+  color: rgb(0, 0, 0);
+}
+
+.allProducts {
+  margin-top: 2.5rem;
+}
+.allProducts a {
+  text-decoration: none;
+}
+
+.card-body {
+  border-top: none;
+}
+.cards2 {
+  height: 200px;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  transition: 0.3s ease-in-out;
+  background-color: rgb(255, 255, 255);
+}
+.cards2:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+.cards2:hover .card-price {
+  font-size: 1.7rem;
+  color: rgb(127, 255, 212);
+}
+
+.cards2 .card-price {
+  font-size: 1.5rem;
+  color: rgb(122, 122, 122);
+}
+.cards2 .card-description {
+  color: rgb(122, 122, 122);
+  font-weight: lighter;
+  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  width: 90%;
+  max-height: 60%;
+}
+
+.image {
+  height: 100%;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+@media (max-width: 1200px){
+  .allProducts{
     width: 80%;
-    padding: .5rem;
-}
-.price-options span{
-    font-family: 'Poppins', sans-serif;    
-    font-size: 1.4rem;
-}
-.price-options ul{
-    list-style-type: none;
-    padding: 0;
-}
-.price-options ul a{
-    text-decoration: none;
-    color: rgb(75, 75, 75);
-    
-}
-.price-options li{
-    transition: .3s linear;
-    transform: perspective(1px) scale(1) translateZ(0);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-}
-.price-options li:hover{
-    transform: translateX(2px);
-    color: rgb(0, 0, 0);
+  }
+  .searchIndex{
+    width: 20%;
+  }
 }
 
-
-.allProducts{
-    margin-top: 2.5rem;
-}
-.allProducts a{
-    text-decoration: none;
-}
-
-.cards2{
-    height: 13rem;
-    width: 55rem;
-    display: flex;
+@media (max-width: 992px) { 
+  .catIndex{
+    flex-direction: column;
+  }
+  .searchIndex{
+    position: inherit;
+    width: 100%;
     flex-direction: row;
-    transition: .3s ease-in-out;
-    background-color: rgb(255, 255, 255);
-}
-.cards2:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.10);
-}
-.cards2:hover .card-price{
-    font-size: 1.7rem;
-    color: rgb(127, 255, 212);
-}
-
-.cards2 .card-price{
-    font-size: 1.5rem;
-    color: rgb(122, 122, 122);
-}
-.cards2 .card-description{
-    color: rgb(122, 122, 122);
-    font-weight: lighter;
-    font-size: 1.1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-   -webkit-line-clamp: 4; 
-    line-clamp: 4; 
-   -webkit-box-orient: vertical;
-    width: 90%;
-    max-height: 60%;
+    height: 200px;
+    justify-content: flex-end;
+    align-items: baseline;
+    border-radius: 0px;
+  }
+  .searchIndex h3{
+    font-size: 1.3rem;
+  }
+  .searchIndex span{
+    font-size: 1.2rem;
+  }
+  .customer-review{
+    align-self: inherit;
+  }
 }
 
-.image{
-    height: 13rem;
-    width: 13rem;
-    align-items: center;
+@media (max-width: 768px){
+  .allProducts{
+    width: 100%;
     justify-content: center;
+    align-items: center;
+  }
+  .allProducts .cards2{
+    align-self: center;
+    width: 90%;
+  }
 }
-.image img{
-    height: 13rem;
-    width: 13rem;
-    border-radius: 5px;
-}
-

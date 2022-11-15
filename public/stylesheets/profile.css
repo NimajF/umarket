@@ -174,3 +174,31 @@
         gap: 10px;
     }
 }
+
+@media (max-width: 1400px) { 
+    .profile-anchors{
+        width: 20%;
+    }
+ }
+
+@media (max-width: 1200px){
+    .profile-anchors{
+        width: 100%;
+    }
+ }
+
+ @media (max-width: 576px){
+    .profile-anchors{
+        flex-wrap: wrap;
+    }
+    .profile-info{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-info div{
+        width: 80%;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+    }
+ }

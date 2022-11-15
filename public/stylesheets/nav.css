@@ -1,37 +1,45 @@
-
-.navbar{
-    -webkit-box-shadow: 0px 9px 26px -5px rgba(0,0,0,0.37); 
-    box-shadow: 0px 9px 26px -5px rgba(0,0,0,0.37);
-    border-bottom: 1px solid rgb(184, 180, 180);
-    height: 4rem;
-    transition: all 0.3s;
+.navbar {
+  -webkit-box-shadow: 0px 9px 26px -5px rgba(0, 0, 0, 0.37);
+  box-shadow: 0px 9px 26px -5px rgba(0, 0, 0, 0.37);
+  border-bottom: 1px solid rgb(184, 180, 180);
+  height: 64px;
+  transition: all 0.3s;
 }
 
+.navbar-toggler:hover {
+  background-color: rgb(245, 245, 245);
+}
+.navbar-toggler:focus {
+  background-color: rgb(245, 245, 245);
+  box-shadow: none;
+  border: 1px solid rgb(177, 177, 177);
+}
+.navbar-brand {
+  transition: 0.3s ease-in-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+.navbar-brand:hover {
+  transform: translateY(1px) scale(1.1);
+}
 
-.navbar-brand{
-    transition: .3s ease-in-out;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-}
-.navbar-brand:hover{
-    transform: translateY(1px) scale(1.1);
-    
-    
-    
-}
-.dropdown-menu{
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
+.search button:active {
+  background-color: rgb(88, 255, 199);
 }
 
-.btn-outline-success{
-    color: rgb(255, 255, 255);
-    background-color: rgb(127, 255, 212);
-    border: none;
+.dropdown-menu {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-.btn-outline-success:hover{
-    background-color: rgb(87, 223, 177);
-    border: transparent;
+
+.btn-outline-success {
+  color: rgb(255, 255, 255);
+  background-color: rgb(127, 255, 212);
+  border: none;
+}
+.btn-outline-success:hover {
+  background-color: rgb(87, 223, 177);
+  border: transparent;
 }
 /* .btn-outline-success:focus{
     outline: none;
@@ -39,44 +47,44 @@
 } */
 
 .drop .nav-link {
-    transition: .5s linear;
-    border: 1px solid transparent;
+  transition: 0.5s linear;
+  border: 1px solid transparent;
 }
-.drop .nav-link:hover{
-    border: 1px solid rgb(127, 255, 212);
-    border-radius: 6px;
-}
-
-
-
-.links .nav-link{
-    width: 4.5rem;
-    text-align: center;
-    border-top-right-radius: 3px; border-top-left-radius: 3px;
-    transition: .5s ease;
-    border-bottom: 2px solid transparent;
-    background-color: rgb(250, 250, 250);
-}
-.links .nav-link:hover{
-    border-top-right-radius: 2px; border-top-left-radius: 2px;
-    border-bottom: 2px solid rgb(204, 203, 203);
-    background-color: rgb(248, 248, 248);
+.drop .nav-link:hover {
+  border: 1px solid rgb(127, 255, 212);
+  border-radius: 6px;
 }
 
-.links .usr{
-    transition: .5s ease;
-    border-bottom: 2px solid transparent;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 150px;
+.links .nav-link {
+  width: 75px;
+  text-align: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  transition: 0.5s ease;
+  border-bottom: 2px solid transparent;
+  background-color: rgb(250, 250, 250);
 }
-.links .usr:hover{
-    color: rgb(127, 255, 212);
-    border-bottom: 2px solid rgb(127, 255, 212);
+.links .nav-link:hover {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom: 2px solid rgb(204, 203, 203);
+  background-color: rgb(248, 248, 248);
 }
-.usr:hover i{
-    color: rgb(127, 255, 212);
+
+.links .usr {
+  transition: 0.5s ease;
+  border-bottom: 2px solid transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+.links .usr:hover {
+  color: rgb(127, 255, 212);
+  border-bottom: 2px solid rgb(127, 255, 212);
+}
+.usr:hover i {
+  color: rgb(127, 255, 212);
 }
 /* .bell-notification{
     position: absolute;
@@ -95,13 +103,13 @@
     line-height: 10px;
     color: #FFF;
 } */
-.links .cart{
-    transition: .5s ease;
-    border-bottom: 2px solid transparent;
+.links .cart {
+  transition: 0.5s ease;
+  border-bottom: 2px solid transparent;
 }
-.links .cart:hover{
-    color: rgb(127, 255, 212);
-    border-bottom: 2px solid rgb(127, 255, 212);
+.links .cart:hover {
+  color: rgb(127, 255, 212);
+  border-bottom: 2px solid rgb(127, 255, 212);
 }
 
 /* .b:hover{
@@ -109,46 +117,54 @@
 } */
 
 @media screen and (max-width: 976px) {
-    #navbarSupportedContent{
-        width: 100%;
-        border-bottom: 2px solid aquamarine;
-    }
-    .drop .nav-link {
-        margin: 1rem 0px 1rem 10px;
-        border: 1px solid transparent;
-    }
-    .drop .nav-link:hover{
-        border: 1px solid transparent;
-        background-color: rgb(247, 247, 247);
-    }
-    .drop{
-        margin-left: 10px;
-        align-self: center;
-        width: 50%;
-    }
-    .search{
-        width: 30rem;
-        margin-left: 10px;
-    }
-    .links .nav-link{
-        align-self: flex-start;
-        width: 100%;
-        text-align: start;
-        padding: 10px;
-    }
-    .links .nav-link:hover{
-        border-bottom: 2px solid transparent;
-        background-color: rgb(247, 247, 247);
-    }
-    
-    .links .usr{
+  #navbarSupportedContent {
+    width: 100%;
+    border-bottom: 2px solid aquamarine;
+  }
+  .drop .nav-link {
+    margin: 1rem 0px 1rem 10px;
+    border: 1px solid transparent;
+  }
+  .drop .nav-link:hover {
+    border: 1px solid transparent;
+    background-color: rgb(247, 247, 247);
+  }
+  .drop {
+    margin-left: 10px;
+    align-self: center;
+    width: 100%;
+  }
+  .search {
+    width: 100px;
+    margin-left: 10px;
+  }
+  .links .nav-link {
+    align-self: flex-start;
+    width: 100%;
+    text-align: start;
+    padding-left: 20px;
+    border-radius: 0px;
+  }
+  .links .nav-link:hover {
+    border-bottom: 2px solid transparent;
+    background-color: rgb(247, 247, 247);
+  }
+
+  /* .links .nav-link .usr{
+        background-color: aqua;
         transition: .5s ease;
         border-bottom: 2px solid transparent;
     }
-    .links .usr:hover{
+    .links .nav-link .usr:hover{
         border-bottom: 2px solid transparent;
-    }
-    .usr:hover i{
-        color: rgb(127, 255, 212);
-    }
+    } */
+  .usr:hover i {
+    color: rgb(127, 255, 212);
   }
+}
+
+@media (max-width: 992px) { 
+  .links .usr{
+    max-width: 100%;
+  }
+ }

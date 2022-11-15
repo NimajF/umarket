@@ -6,6 +6,8 @@
 .purchaseDiv{
     width: 65rem;
     margin-top: 5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.15);
     background-color: #fff;
     display: flex;
     flex-direction: column;
