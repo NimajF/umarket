@@ -39,10 +39,8 @@ const Review = require("./models/reviews");
 
 const categories = require("./seeds/categories");
 
-const uri = process.env.CLUSTER_URL;
-
 mongoose
-  .connect(uri, {
+  .connect("mongodb://localhost:27017/umarket", {
     useNewUrlParser: true,
     // useCreateIndex: true,
     useUnifiedTopology: true,
@@ -107,6 +105,11 @@ app.use("/", userRoutes);
 app.use("/products", ProductRoutes);
 app.use("/products/:id/reviews", reviewRoutes);
 app.use("/order", orderRoutes);
+
+app.get("/", async (req, res) => {
+  const products = await Product.find({});
+  res.render("homepage/home", { products });
+});
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page not Found!", 404));
