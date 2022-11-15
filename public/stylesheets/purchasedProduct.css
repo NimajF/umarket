@@ -40,3 +40,12 @@
 .congratsDiv a{
     align-self: center;
 }
+
+@media (max-width: 576px){
+    .congratsSec{
+        height: 100vh;
+    }
+    .congratsDiv{
+        width: 100%;
+    }
+}

@@ -74,10 +74,12 @@
 
 
 
-/* .purchaseForm button{
-    display: inline-block;
+.purchaseForm button{
+    display: inline;
     align-self: center;
-} */
+    width: 100%;
+    margin-top: 2rem;
+}
 
 @keyframes shine {
 	0% {
@@ -89,4 +91,37 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@media (max-width: 1200px){
+    .purchaseSection{
+        width: 100%;
+    }
+    .purchaseDiv{
+        width: 100%;
+    }
+}
+@media (max-width: 992px){
+    .shipping{
+        align-items: center;
+        justify-content: center;
+    }
+    .shipping div{
+        width: 80%;
+        height: 160px;
+    }
+
+    .payment{
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .payment div{
+        align-self: center;
+        padding: 0;
+        margin: 0 !important;
+    }
+    .payment button{
+        margin: auto;
+    }
 }
