@@ -4,6 +4,8 @@
 This is my first huge personal project after finishing my first Udemy course.
 > <a href="https://www.udemy.com/course/the-web-developer-bootcamp/"> The Web Developer Bootcamp 2021 </a> By Colt Steele
 
+You can check it out [here](https://umarket-five.vercel.app).
+
 Umarket is a Web application that **simulates** an online shopping store.
 It is made using:
 - HTML and CSS with a bit of Bootstrap 5, and JavaScript (also EJS) for Front End.
@@ -11,8 +13,11 @@ It is made using:
 
 The project is commited to this repository a bit later after it was started due to my lack of knowledge about GITHUB.
 
-You can check it out [here](https://umarket-five.vercel.app).
+<b>Important</b>
+<br>
+The main goal of the project is already done, however, no more features will be added for the time being. The idea is to show the contrast of my early days of Web Development 
 
+<hr>
 <h2>Umarket screenshots</h2>
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Homepage.PNG?raw=true">
 <img src="https://github.com/NimajF/Umarket/blob/main/screenshots/Homepage2.PNG?raw=true">
