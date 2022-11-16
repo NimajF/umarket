@@ -68,9 +68,17 @@ app.use(methodOverride("_method")); // string method we want to use in form acti
 app.use(express.static(path.join(__dirname, "public")));
 app.use(mongoSanitize());
 
-const store = MongoStore;
+const secret = process.env.SECRET || "sicre";
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  touchAfter: 24 * 60 * 60, //24hs
+  crypto: {
+    secret,
+  },
+});
 
 const sessionConfig = {
+  store,
   name: "Session",
   secret: "sicret",
   resave: false,
