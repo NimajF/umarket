@@ -1,29 +1,27 @@
-const passport = require('passport');
-const User = require('../models/users');
-const Cart = require('../models/cart');
-const Product = require('../models/products');
-const Order = require('../models/order')
-const Day = require('../public/javascripts/weekday');
-const { array } = require('joi');
-
-
+const passport = require("passport");
+const User = require("../models/users");
+const Cart = require("../models/cart");
+const Product = require("../models/products");
+const Order = require("../models/order");
+const Day = require("../public/javascripts/weekday");
+const { array } = require("joi");
 
 module.exports.renderRegister = (req, res) => {
-    res.render('users/register');
-}
+  res.render("users/register");
+};
 module.exports.register = async (req, res) => {
-    try {
-        const { email, username, password} = req.body
-        const user = new User({email, username});
-        const regUser = await User.register(user, password)//Passport! 
-        user.reputation = 0;
-        console.log(regUser)
-        await user.save();
-        res.redirect('/products')
-    } catch (e) {
-        res.redirect('/register')
-    }
-}
+  try {
+    const { email, username, password } = req.body;
+    const user = new User({ email, username });
+    const regUser = await User.register(user, password); //Passport!
+    user.reputation = 0;
+    console.log(regUser);
+    await user.save();
+    res.redirect("/");
+  } catch (e) {
+    res.redirect("/register");
+  }
+};
 
 // module.exports.register = async (req, res, next) => {
 //     try {
@@ -42,24 +40,27 @@ module.exports.register = async (req, res) => {
 // }
 
 module.exports.renderLogin = (req, res) => {
-     res.render('users/login');
-}
+  res.render("users/login");
+};
 
 module.exports.login = (req, res) => {
-    // req.flash('success', 'welcome back!');
-    const redirectUrl = req.session.returnTo || '/products';
-    // delete req.session.returnTo;
-    res.redirect(redirectUrl);
-}
+  // req.flash('success', 'welcome back!');
+  const redirectUrl = req.session.returnTo || "/";
+  // delete req.session.returnTo;
+  res.redirect(redirectUrl);
+};
 
 module.exports.renderProfile = async (req, res) => {
-    const { userId } = req.params;
-    const foundUser = await User.findById(userId)
-    const foundUserOrders = await Order.find({orderUser: foundUser._id}).populate('product') // finds all user's orders.
-    const userProducts = await Product.find({author: foundUser._id}).populate('author') // finds all user's (for sale) products.
-    res.render('users/profile', { foundUser, foundUserOrders, userProducts })
-}
-
+  const { userId } = req.params;
+  const foundUser = await User.findById(userId);
+  const foundUserOrders = await Order.find({
+    orderUser: foundUser._id,
+  }).populate("product"); // finds all user's orders.
+  const userProducts = await Product.find({ author: foundUser._id }).populate(
+    "author"
+  ); // finds all user's (for sale) products.
+  res.render("users/profile", { foundUser, foundUserOrders, userProducts });
+};
 
 // module.exports.renderCart = async (req, res) => {
 //     const product = req.body.product;
@@ -69,10 +70,9 @@ module.exports.renderProfile = async (req, res) => {
 //     res.render('users/cart', { product })
 // } Feature coming Soon!
 
-
 module.exports.logout = (req, res) => {
-    req.logout();
-    req.session.destroy();
-    // req.flash('success', "Goodbye!");
-    res.redirect('/products');
-}
+  req.logout();
+  req.session.destroy();
+  // req.flash('success', "Goodbye!");
+  res.redirect("/");
+};

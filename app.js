@@ -21,7 +21,8 @@ const methodOverride = require("method-override"); // for PUT and DELETE request
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 // connect-mongo cloud
-// const MongoStore = require('connect-mongo');
+const MongoStore = require("connect-mongo");
+
 const catchAsync = require("./utilities/catchAsync");
 
 // Routes
@@ -46,7 +47,7 @@ mongoose
     useNewUrlParser: true,
     // useCreateIndex: true,
     useUnifiedTopology: true,
-    // useFindAndModify: false
+    // useFindAndModify: false,
   })
   .then(() => {
     console.log("Database Connected");
@@ -61,8 +62,13 @@ const path = require("path");
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method")); // string method we want to use in form action
 app.use(express.static(path.join(__dirname, "public")));
 app.use(mongoSanitize());
+
+const store = MongoStore;
 
 const sessionConfig = {
   name: "Session",
@@ -86,9 +92,6 @@ passport.use(new LocalStrategy(User.authenticate())); //Athentication method
 
 passport.serializeUser(User.serializeUser()); //Serialize user. Store user in the session
 passport.deserializeUser(User.deserializeUser()); //Get the user out of the session.
-
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method")); // string method we want to use in form action
 
 //LOCALS
 app.use((req, res, next) => {
@@ -122,6 +125,7 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error", { err });
 });
 
-app.listen(3000, () => {
-  console.log("Running - Port: 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Running - Port: ${port}`);
 });

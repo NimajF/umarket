@@ -2,7 +2,7 @@
     "version": 2,
     "name": "umarket",
     "builds": [{
-        "src": "app.js",
+        "src": "./app.js",
         "use": "@vercel/node"
     }],
     "routes": [{
